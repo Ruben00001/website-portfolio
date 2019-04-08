@@ -84,6 +84,7 @@ a:link, a:visited {
     font-family: 'Hanken-Grotesk';
     width: 100vw;
     height: 100vh;
+    display: relative;
 
     &--top {
       height: 85%;
@@ -181,4 +182,10 @@ a:link, a:visited {
     }
 
   }
+}
+
+
+.script-box {
+  will-change: width, height, left, top;
+  position: relative;
 }

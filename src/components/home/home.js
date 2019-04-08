@@ -9,44 +9,25 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      // page: 1,
-      page1up: true,
-      // page2up: true
+      page1: true,
     }
 
     this.routePage2 = this.routePage2.bind(this);
   }
 
-  routePage2 = (user) => {
+  routePage2 = () => {
     setTimeout(() => {this.props.history.push('/page2')}, 600)
   }
 
   render() {
-
-    // const pageUp = () => {
-    //   if(this.state.page > 1) {
-    //     this.setState({
-    //       page: this.state.page - 1,
-    //       page1up: true,
-    //       page2up: false
-    //     });
-    //   }
-    // }
     const pageDown = () => {
-      // if(this.state.page < 2) {
-        this.setState({
-          // page: this.state.page + 1,
-          page1up: false,
-          // page2up: true
-        });        
-      // }
+      this.setState({ 
+        page1: false, //triggers the leave animation
+      });        
       this.routePage2()
     }
 
     window.addEventListener('wheel', function(e) {
-      // if (e.deltaY < 0) {
-      //   pageUp();
-      // }
       if (e.deltaY > 0) {
         pageDown();
       }
@@ -56,7 +37,7 @@ class Home extends Component {
       <React.Fragment>
         <Transition
           native
-          items = { this.state.page1up }
+          items = { this.state.page1 }
           from={{ opacity: 1, marginTop: 0 }}
           enter={{ opacity: 1 }}
           leave={{ opacity: 0, marginTop: -300 }}
@@ -73,14 +54,6 @@ class Home extends Component {
           ))}
         </Transition>
       </React.Fragment>
-
-      
-
-
-
-
-
-
     );
   }
 }
