@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Hanken-Grotesk';
+  src: local('Hanken-Grotesk'), url(../assets/fonts/HankenGrotesk-Medium.ttf) format('truetype');
+}
+
+/* FIRST PAGE ********************** */
+
+.first-page-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Hanken-Grotesk';
+  font-size: 30px;
+  // border: 3px solid black;
+}
+
+.welcome-text {
+  text-align: center;
+  transform: translateY(-50%);
+  // border: 1px solid black;
+  width: 900px;
+  height: 200px;
+
+
+  p {
+    text-align: inherit;
+  }
+
+  &__first-line {
+    font-size: 18px;
+    margin-bottom: 40px;
+
+    span {
+      animation: color 2s ease-in;
+    }
+  }
+
+  &__second-line {
+    font-size: 80px;
+    font-weight: bold;
+  }
+}
+
+.xx {
+  width: 900px;
+  // border: 1px solid black;
+  display: flex;
+  justify-content: flex-start; 
+  text-align: center;
+  // margin: auto;
+}
