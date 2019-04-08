@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import React, { Component } from 'react'
+import {BrowserRouter, Route} from 'react-router-dom'
 import Home from './components/home/home'
-import Page2 from './components/home/Page2'
+import Page2 from './components/about/Page2'
+
+
 
 class App extends Component {
 

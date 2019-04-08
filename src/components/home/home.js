@@ -1,19 +1,20 @@
-import React, { Redirect, Component } from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { Transition, animated } from 'react-spring/renderprops';
 import WelcomeText from './welcomeText';
 import Block1 from './Block1'
-import Page2 from './Page2'
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      page: 1,
+      // page: 1,
       page1up: true,
-      page2up: true
+      // page2up: true
     }
+
+    this.routePage2 = this.routePage2.bind(this);
   }
 
   routePage2 = (user) => {
@@ -22,30 +23,30 @@ class Home extends Component {
 
   render() {
 
-    const pageUp = () => {
-      if(this.state.page > 1) {
-        this.setState({
-          page: this.state.page - 1,
-          page1up: true,
-          page2up: false
-        });
-      }
-    }
+    // const pageUp = () => {
+    //   if(this.state.page > 1) {
+    //     this.setState({
+    //       page: this.state.page - 1,
+    //       page1up: true,
+    //       page2up: false
+    //     });
+    //   }
+    // }
     const pageDown = () => {
-      if(this.state.page < 2) {
+      // if(this.state.page < 2) {
         this.setState({
-          page: this.state.page + 1,
+          // page: this.state.page + 1,
           page1up: false,
-          page2up: true
+          // page2up: true
         });        
-      }
+      // }
       this.routePage2()
     }
 
     window.addEventListener('wheel', function(e) {
-      if (e.deltaY < 0) {
-        pageUp();
-      }
+      // if (e.deltaY < 0) {
+      //   pageUp();
+      // }
       if (e.deltaY > 0) {
         pageDown();
       }
@@ -71,21 +72,6 @@ class Home extends Component {
             </animated.div>
           ))}
         </Transition>
-        {/* <Transition
-          native
-          items = { this.state.page2up }
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          config={{ delay: 2000 }}
-          leave={{ opacity: 1 }}
-        >
-          {show => show && (props => (
-            <animated.div style={props}>
-              <Page2 />        
-            </animated.div>
-          ))}
-        </Transition> */}
-
       </React.Fragment>
 
       
