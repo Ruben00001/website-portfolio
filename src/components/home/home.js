@@ -16,7 +16,7 @@ class Home extends Component {
   }
 
   routePage2 = () => {
-    setTimeout(() => {this.props.history.push('/page2')}, 600)
+    setTimeout(() => {this.props.history.push('/about')}, 600)
   }
 
   render() {
@@ -39,7 +39,7 @@ class Home extends Component {
           native
           items = { this.state.page1 }
           from={{ opacity: 1, marginTop: 0 }}
-          enter={{ opacity: 1 }}
+          enter={{ opacity: 1, marginTop: 0 }}
           leave={{ opacity: 0, marginTop: -300 }}
         >
           {show => show && (props => (

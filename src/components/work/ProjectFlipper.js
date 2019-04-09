@@ -1,0 +1,91 @@
+import React from 'react';
+import { useSpring, animated } from 'react-spring'
+
+
+// export default function ProjectFlipper() {
+//   return (
+//     <Spring
+//       from={{ opacity: 0, width: '100%', height: '0%', background: 'yellow'}}
+//       to={{ opacity: 1,  width: '100%', height: '100%'}}
+//       config={{ duration: 500 }}
+//     >
+//       { props => (
+//         <div style={flipperContainerStyle}>
+//           <div style={props} className="flipper__wiper"></div>
+//         </div>
+//       )}
+//     </Spring>
+//   )
+// }
+
+export default function ProjectFlipper() {
+  const props = useSpring({
+    from: { opacity: 1, top: '100%', width: '100%', height: '0%', background: 'black' },
+    to: async next => {
+        await next({ top: '0%', width: '100%', height: '100%' })
+        await next({ top: '0%', width: '100%', height: '0%' })
+    },
+    config: { duration: 600, tension: 100 }
+  })
+  return (
+    <div style={flipperContainerStyle}>
+      <animated.div style={props} className="flipper__wiper script-box"></animated.div>
+    </div>
+  ) 
+}
+
+
+
+const flipperContainerStyle = {
+  display: 'flex',
+  width: 700,
+  height: 500,
+  alignSelf: 'center',
+  border: '1px solid black',
+  position: 'absolute',
+  top: '50%',
+  left: '15%',
+  transform: 'translateY(-60%)',
+  // background: 'blue'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const pages = [
+//   ({ style }) => <animated.div style={{ ...style, background: 'lightpink' }}>A</animated.div>,
+//   ({ style }) => <animated.div style={{ ...style, background: 'lightblue' }}>B</animated.div>,
+//   ({ style }) => <animated.div style={{ ...style, background: 'lightgreen' }}>C</animated.div>,
+// ]
+
+// export default function ProjectFlipper() {
+//   const [index, set] = useState(0)
+//   const onClick = useCallback(() => set(state => (state + 1) % 3), [])
+//   const transitions = useTransition(index, p => p, {
+//     from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
+//     enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+//     leave: { opacity: 0, transform: 'translate3d(-50%,0,0)' },
+//   })
+//   return (
+//     <div className="simple-trans-main" onClick={onClick}>
+//       {transitions.map(({ item, props, key }) => {
+//         const Page = pages[item]
+//         return <Page key={key} style={props} />
+//       })}
+//     </div>
+//   )
+// }
+
+
