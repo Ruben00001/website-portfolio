@@ -25,6 +25,10 @@ class Page2 extends Component {
     setTimeout(() => {this.props.history.push('/')}, 600)
   }
 
+  routeWork = () => {
+    setTimeout(() => {this.props.history.push('/work')}, 600)
+  }
+
   render() {
     const pageUp = () => {
       this.setState({
@@ -33,13 +37,17 @@ class Page2 extends Component {
       this.routePage1();
     }
 
+    const pageDown = () => {
+      this.routeWork();
+    }
+
     window.addEventListener('wheel', function(e) {
       if (e.deltaY < 0) {
         pageUp();
       }
-      // if (e.deltaY > 0) {
-      //   pageDown();
-      // }
+      if (e.deltaY > 0) {
+        pageDown();
+      }
     });
 
     return (

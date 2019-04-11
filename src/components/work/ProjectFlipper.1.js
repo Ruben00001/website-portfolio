@@ -3,16 +3,18 @@ import { useSpring, animated } from 'react-spring'
 
 
 export default function ProjectFlipper() {
-  const props = useSpring({
-    from: { opacity: 0 },
+  const animationProps = useSpring({
+    from: { opacity: 1, top: '100%', width: '100%', height: '0%', background: 'black' },
     to: async next => {
-        await next({ opacity: 1 })
+        await next({ top: '0%', width: '100%', height: '100%' })
+        await next({ top: '0%', width: '100%', height: '0%' })
     },
-    config: { duration: 1000, tension: 100 }
+    config: { duration: 600, tension: 100 },
+    // reset:  true
   })
 
   return (
-    <animated.div style={props} className="flipper__wiper"></animated.div>
+    <animated.div style={animationProps} className="flipper__wiper script-box"></animated.div>
   )
   
 }
