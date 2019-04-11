@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react'
 import { useTransition, animated } from 'react-spring'
+import { Spring } from 'react-spring/renderprops'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons"
 import { faPlay } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Spring } from 'react-spring/renderprops';
-import FlipperNext from './FlipperNext'
+
 
 const flipperImages = [
   require('../../img/Amy.JPG'),
@@ -47,8 +47,6 @@ const pages = [
       </div>
     </animated.div>
 ]
-
-
 
 
 export default function Flipper() {

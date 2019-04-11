@@ -12,7 +12,7 @@ export default function AboutSpielTitle() {
     >
       { props => (
         <div style={props} className="about__languages">
-          <div className="about__title">
+          <div className="about__languages__title">
             <h1>Languages & Frameworks</h1>
             <div></div>
           </div>
