@@ -10,8 +10,8 @@ export default function SecondLineB() {
 
   const [items, set] = useState([])
   const transitions = useTransition(items, item => item.key, {
-    from: { transform: 'translate3d(0,15px,0)', opacity: 0, fontSize: 60 },
-    enter: { transform: 'translate3d(0,0px,0)', opacity: 1, fontSize: 60, minWidth: 16.75 },
+    from: { transform: 'translate3d(0,15px,0)', opacity: 0 },
+    enter: { transform: 'translate3d(0,0px,0)', opacity: 1, minWidth: 16.75 },
     leave: { transform: 'translate3d(0,15px,0)', opacity: 0, minWidth: 16.75 },
   })
 

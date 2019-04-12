@@ -9,7 +9,6 @@ import AboutSpielInfo from './AboutSpielInfo'
 import AboutSpielIcons from './AboutSpielIcons'
 import AboutImageHeadshot from './AboutImageHeadshot'
 import AboutLanguages from './AboutLanguages'
-import Block1 from './blocks/Block1'
 
 
 class Page2 extends Component {
@@ -20,35 +19,25 @@ class Page2 extends Component {
       page2: true,
     }
 
-    this.routePage1 = this.routePage1.bind(this);
+    this.routePage2 = this.routePage2.bind(this);
   }
 
-  routePage1 = () => {
-    setTimeout(() => {this.props.history.push('/')}, 600)
-  }
-
-  routeWork = () => {
+  routePage2 = () => {
     setTimeout(() => {this.props.history.push('/work')}, 600)
   }
+
 
   render() {
     const pageUp = () => {
       this.setState({
         page2: false,
       });
-      this.routePage1();
-    }
-
-    const pageDown = () => {
-      this.routeWork();
+      this.routePage2();
     }
 
     window.addEventListener('wheel', function(e) {
       if (e.deltaY < 0) {
-        pageUp();
-      }
-      if (e.deltaY > 0) {
-        pageDown();
+        pageUp();        
       }
     });
 
@@ -76,24 +65,21 @@ class Page2 extends Component {
                 <div className="about__container--bottom">
                   <AboutLanguages />
                 </div>
-                {/* <div style={Block1ContainerStyle}>
-                  <Block1 />
-                </div> */}
                 <div className="side-decoration">
-          <div className="side-decoration__icon-container">
-            <FontAwesomeIcon className="side-decoration__icon"  icon={faBolt}/>
-            <FontAwesomeIcon className="side-decoration__icon"  icon={faEye}/>
-            <FontAwesomeIcon className="side-decoration__icon"  icon={faGem}/>
-            <FontAwesomeIcon className="side-decoration__icon"  icon={faSnowflake}/>
-          </div>
-          <div className="side-decoration__line"></div>
-          <div className="side-decoration__icon-container">
-            <FontAwesomeIcon className="side-decoration__icon"  icon={faSnowflake}/>
-            <FontAwesomeIcon className="side-decoration__icon"  icon={faGem}/>
-            <FontAwesomeIcon className="side-decoration__icon"  icon={faEye}/>
-            <FontAwesomeIcon className="side-decoration__icon"  icon={faBolt}/>           
-          </div>
-        </div>
+                  <div className="side-decoration__icon-container">
+                    <FontAwesomeIcon className="side-decoration__icon"  icon={faBolt}/>
+                    <FontAwesomeIcon className="side-decoration__icon"  icon={faEye}/>
+                    <FontAwesomeIcon className="side-decoration__icon"  icon={faGem}/>
+                    <FontAwesomeIcon className="side-decoration__icon"  icon={faSnowflake}/>
+                  </div>
+                  <div className="side-decoration__line"></div>
+                  <div className="side-decoration__icon-container">
+                    <FontAwesomeIcon className="side-decoration__icon"  icon={faSnowflake}/>
+                    <FontAwesomeIcon className="side-decoration__icon"  icon={faGem}/>
+                    <FontAwesomeIcon className="side-decoration__icon"  icon={faEye}/>
+                    <FontAwesomeIcon className="side-decoration__icon"  icon={faBolt}/>           
+                  </div>
+                </div>
               </div>   
             </animated.div>
           ))}

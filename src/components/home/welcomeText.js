@@ -15,19 +15,19 @@ class WelcomeText extends Component {
 
   render() {
     if (this.state.switchLine === 1) {
-      setTimeout(() => { this.setState({ switchLine: 2 }) }, 5000);
+      setTimeout(() => { this.setState({ switchLine: 2 }) }, 6000);
     }
     
     return (
       <div className="welcome-text">
         < FirstLine />
         {this.state.switchLine===1 && 
-            <div style={{ marginLeft: 120 }} className="xx">
+            <div className="welcome-text__second-line">
               < SecondLineA />  
             </div>
         }
         {this.state.switchLine===2 && 
-            <div style={{ marginLeft: 80 }} className="xx">
+            <div className="welcome-text__second-line">
               < SecondLineB />
             </div>
         }
