@@ -93,7 +93,7 @@ const Block2ContainerStyle = {
   width: 45,
   height: 9,
   position: 'absolute',
-  top: 200,
+  top: 300,
   right: '35%'
 }
 
@@ -101,7 +101,7 @@ const Block3ContainerStyle = {
   width: 45,
   height: 9,
   position: 'absolute',
-  top: 220,
+  top: 320,
   right: '35%'
 }
 
@@ -109,21 +109,21 @@ const Block4ContainerStyle = {
   width: 45,
   height: 9,
   position: 'absolute',
-  top: 240,
+  top: 340,
   right: '35%'
 }
 
 const Block5ContainerStyle = {
-  width: 70,
-  height: 8,
+  width: 60,
+  height: 10,
   position: 'absolute',
   bottom: 300,
   left: '19%'
 }
 
 const Block6ContainerStyle = {
-  width: 9,
-  height: 45,
+  width: 13,
+  height: 65,
   position: 'absolute',
   bottom: 100,
   left: '30%'

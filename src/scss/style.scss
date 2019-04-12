@@ -38,9 +38,8 @@ a:link, a:visited {
   text-align: center;
   transform: translateY(-50%);
   // border: 1px solid black;
-  width: 900px;
+  // width: 900px;
   height: 200px;
-
 
   p {
     text-align: inherit;
@@ -49,7 +48,7 @@ a:link, a:visited {
   &__first-line {
     font-size: 22px;
     margin-bottom: 40px;
-    border: 1px solid black;
+    // border: 1px solid black;
 
     span {
       animation: color 2s ease-in;
@@ -63,7 +62,7 @@ a:link, a:visited {
     display: flex;
     justify-content: flex-start; 
     text-align: center;
-    border: 1px solid black;
+    // border: 1px solid black;
   }
 }
 
@@ -172,7 +171,6 @@ a:link, a:visited {
     width: 260px;
     height: 1px;
     border: .5px solid black;
-    font-family: 'hanken'
   }
 
   p {
@@ -193,7 +191,7 @@ a:link, a:visited {
     height: 500px;
     position: absolute;
     top: 50%;
-    left: 15%;
+    left: 15vw;
     transform: translateY(-60%);
   }
   

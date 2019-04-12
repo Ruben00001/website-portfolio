@@ -5,21 +5,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons"
 import { faPlay } from "@fortawesome/free-solid-svg-icons"
 import Pagination from './Pagination'
+import { ProjectList } from '../../data/work'
 
 
-const flipperImages = [
-  require('../../img/Amy.JPG'),
-  require('../../img/mountapp.JPG'),
-  require('../../img/Amy.JPG'),
-  require('../../img/mountapp.JPG'),
-  require('../../img/Amy.JPG'),
-  require('../../img/mountapp.JPG'),
-]
-
-const pages = [
-  ({ style }) => 
+const pages = ProjectList.map((project) => {
+  return (
+    ({ style }) => 
     <animated.div style={{ ...style }}>
-      <img src={flipperImages[0]} className="flipper__image" alt="" />
+      <img src={project.image} className="flipper__image" alt="" />
       <Spring
         from={{ opacity: 0, marginLeft: 20 }}
         to={{ opacity: 1, marginLeft: 0 }}
@@ -27,43 +20,21 @@ const pages = [
       >
       { props => (
               <div style={props} className="flipper__info__container">
-              <h1 className="flipper__title">Amy's Jewellery</h1>
+              <h1 className="flipper__title">{project.title}</h1>
               <div className="flipper__sub-title">
                 <div></div>
-                <h2>website</h2>
+                <h2>{project.type}</h2>
               </div>
             </div>
       )}
     </Spring>
       <div className="flipper__links">
-        <a href="https://github.com/Ruben00001/website-amys-jewellery" target="__blank"><FontAwesomeIcon icon={faGithubAlt} /></a>
-        <a href="https://cryptic-plateau-33978.herokuapp.com/" target="__blank"><FontAwesomeIcon icon={faPlay} /></a>
-      </div>
-    </animated.div>,
-  ({ style }) => 
-    <animated.div style={{ ...style }}>
-      <img src={flipperImages[1]} className="flipper__image" alt="" />
-      <Spring
-        from={{ opacity: 0, marginLeft: 20 }}
-        to={{ opacity: 1, marginLeft: 0 }}
-        config={{ delay: 800, duration: 800 }}
-      >
-      { props => (
-      <div style={props} className="flipper__info__container">
-      <h1 className="flipper__title">MountApp</h1>
-      <div className="flipper__sub-title">
-        <div></div>
-        <h2>project</h2>
-      </div>
-    </div>
-      )}
-    </Spring>
-      <div className="flipper__links">
-        <a href="https://github.com/Ruben00001/node-mount-app" target="__blank"><FontAwesomeIcon icon={faGithubAlt} /></a>
-        <a href="https://nameless-tor-14744.herokuapp.com/" target="__blank"><FontAwesomeIcon icon={faPlay} /></a>
+        <a href={project.git} target="__blank"><FontAwesomeIcon icon={faGithubAlt} /></a>
+        <a href={project.demo} target="__blank"><FontAwesomeIcon icon={faPlay} /></a>
       </div>
     </animated.div>
-]
+  )
+});
 
 
 export default function Flipper() {

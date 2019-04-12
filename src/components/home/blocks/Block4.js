@@ -9,6 +9,13 @@ export default function Block1() {
         await next({  left: '0%', width: '100%', height: '100%', background: '#44C2FF' })
         await next({  left: '100%', width: '0%', height: '100%', background: '#44C2FF' })
         await next({  left: '0%', width: '100%', height: '100%', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'red', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'blue', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'red', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'blue', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'red', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'blue', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'red', background: 'white' })
     },
     config: { easing: 2 }
   })
