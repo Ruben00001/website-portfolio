@@ -26,33 +26,39 @@ class Work extends Component {
     setTimeout(() => {this.props.history.push('/about')}, 600)
   }
 
+  pageUp = () => {
+    this.setState({ 
+      show: false 
+    }); 
+    this.routePage1()
+  }
+
+  pageDown = () => {
+    this.setState({ 
+      show: false
+    }); 
+    this.routePage3();
+  }
+
+  onWheel = e => {
+    if (e.deltaY < 0) {
+      this.pageUp();
+    }
+    if (e.deltaY > 0) {
+      this.pageDown();
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('wheel', this.onWheel);
+  }
+
+  componentWillUnmount() {
+    window.addEventListener('wheel', this.onWheel);
+  }
 
 
   render() {
-    const pageUp = () => {
-      this.setState({ 
-        show: false 
-      }); 
-      this.routePage1()
-    }
-
-    const pageDown = () => {
-      this.setState({ 
-        show: false
-      }); 
-      this.routePage3();
-    }
-
-    window.addEventListener('wheel', function(e) {
-      if (e.deltaY < 0) {
-        pageUp();
-      }
-      if (e.deltaY > 0) {
-        pageDown();
-      }
-    });
-
-
 
     return (
       <Transition

@@ -26,20 +26,28 @@ class Page2 extends Component {
     setTimeout(() => {this.props.history.push('/work')}, 600)
   }
 
+  pageUp = () => {
+    this.setState({
+      page2: false,
+    });
+    this.routePage2();
+  }
+
+  onWheel = e => {
+    if (e.deltaY < 0) {
+      this.pageUp();        
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('wheel', this.onWheel);
+  }
+
+  componentWillUnmount() {
+    window.addEventListener('wheel', this.onWheel);
+  }
 
   render() {
-    const pageUp = () => {
-      this.setState({
-        page2: false,
-      });
-      this.routePage2();
-    }
-
-    window.addEventListener('wheel', function(e) {
-      if (e.deltaY < 0) {
-        pageUp();        
-      }
-    });
 
     return (
       <React.Fragment>

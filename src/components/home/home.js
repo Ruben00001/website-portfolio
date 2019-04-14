@@ -18,26 +18,40 @@ class Home extends Component {
       page1: true,
     }
 
+    // this.handleScroll = this.handleScroll.bind(this);
+
     this.routePage2 = this.routePage2.bind(this);
+    this.pageDown = this.pageDown.bind(this);
   }
 
   routePage2 = () => {
     setTimeout(() => {this.props.history.push('/work')}, 600)
   }
 
-  render() {
-    const pageDown = () => {
-      this.setState({ 
-        page1: false, //triggers the leave animation
-      });        
-      this.routePage2()
-    }
+  pageDown = () => {
+    this.setState({ 
+      page1: false, //triggers the leave animation
+    });        
+    this.routePage2()
+  }
 
-    window.addEventListener('wheel', function(e) {
-      if (e.deltaY > 0) {
-        pageDown();
-      }
-    });
+  onWheel = e => {
+    if (e.deltaY > 0) {
+      this.pageDown();
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener('wheel', this.onWheel);
+  }
+
+  componentWillUnmount() {
+    window.addEventListener('wheel', this.onWheel);
+  }
+
+
+
+  render() {
 
     return (
       <Transition
@@ -141,74 +155,3 @@ const HomeWithRouter = withRouter(Home);
 
 export default HomeWithRouter;
 
-
-
-
-
-// timer: null,
-// changeTextControl1: 1,
-// changeTextControl2: 1,
-// firstLineA: "Hi I'm ",
-// firstLineB: "",
-// secondLine: "'m a web developer"
-
-// this.changeTextLine1 = this.changeTextLine1.bind(this);
-// this.changeTextLine2 = this.changeTextLine2.bind(this);
-
-
-
-// componentDidMount() {
-//   setInterval(this.changeTextLine1, 4000);
-//   setTimeout(this.changeTextLine2, 6000);
-//   setTimeout(this.changeTextLine2, 9000);
-//   setTimeout(this.changeTextLine2, 12000);
-// }
-
-// changeTextLine1() {
-//   if (this.state.changeTextControl1 === 1) {
-//     this.setState({
-//       firstLineA: "",
-//       firstLineB: " is creative"
-//     });
-//   }
-//   if (this.state.changeTextControl1 === 2) {
-//     this.setState({
-//       firstLineA: "",
-//       firstLineB: " is intelligent"
-//     });
-//   }
-//   if (this.state.changeTextControl1 === 3) {
-//     this.setState({
-//       firstLineA: "",
-//       firstLineB: " is not pretentious"
-//     });
-//   }
-//   if (this.state.changeTextControl1 < 3) {
-//     this.setState({
-//       changeTextControl1: this.state.changeTextControl1 + 1
-//     });
-//   }
-// }
-
-// changeTextLine2() {
-//   if (this.state.changeTextControl2 === 1) {
-//     this.setState({
-//       secondLine: "can help your company"
-//     });
-//   }
-//   if (this.state.changeTextControl2 === 2) {
-//     this.setState({
-//       secondLine: "know CSS, JS .."
-//     });
-//   }
-//   if (this.state.changeTextControl2 === 3) {
-//     this.setState({
-//       secondLine: "can ..."
-//     });
-//   }
-//   if (this.state.changeTextControl2 < 3) {
-//     this.setState({
-//       changeTextControl2: this.state.changeTextControl2 + 1
-//     });
-//   }
-// }

@@ -21,8 +21,8 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path="/" render={() => <Home />} />
-          <Route path="/about" render={() => <About />} />
           <Route path="/work" render={() => <Work />} />
+          <Route path="/about" render={() => <About />} />
         </div>
       </BrowserRouter>
     );
