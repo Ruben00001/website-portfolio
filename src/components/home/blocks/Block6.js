@@ -31,7 +31,7 @@ export default function Block1() {
         await next({ top: '100%', width: '100%', height: '100%', color: 'red', background: '#000000' })
         await next({ top: '100%', width: '100%', height: '20%', color: 'blue', background: '#44C2FF' })
         await next({ top: '100%', width: '600%', height: '20%', color: 'red', background: '#44C2FF' })
-        await next({ top: '100%', width: '0%', height: '20%', color: 'blue', background: '#44C2FF' })
+        // await next({ top: '100%', width: '0%', height: '20%', color: 'blue', background: '#44C2FF' })
     },
     config: { duration: 300 }
   })
