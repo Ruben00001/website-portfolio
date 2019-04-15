@@ -54,6 +54,7 @@ export default function Flipper() {
   const [color4, setColor4] = useState('rgb(192, 192, 192)')
   const [color5, setColor5] = useState('rgb(192, 192, 192)')
   const [color6, setColor6] = useState('rgb(192, 192, 192)')
+  const [color7, setColor7] = useState('rgb(192, 192, 192)')
   
   const paginationChangeColor = () => {
     setCount(count + 1);
@@ -80,6 +81,10 @@ export default function Flipper() {
     if(count === 6) {
       setColor6('black');
       setColor5('rgb(192, 192, 192)')
+    }
+    if(count === 7) {
+      setColor7('black');
+      setColor6('rgb(192, 192, 192)')
       setCount(1)
     }
   }
@@ -91,16 +96,7 @@ export default function Flipper() {
         const Page = pages[item]
         return <Page key={key} style={props} />
       })}
-        <Spring
-          from={{ opacity: 0, marginRight: -20 }}
-          to={{ opacity: 1, marginRight: 0 }}
-          reset={true}
-          config={{ delay: 650, duration: 900 }}
-        >
-        { props => (
-          <p style={props} onClick={()=> {onClick(); paginationChangeColor(); }} className="flipper__next">next</p>  
-        )}
-        </Spring>
+        <p onClick={()=> {onClick(); paginationChangeColor(); }} className="flipper__next">next</p>  
         <Pagination 
           color1={{background: color1}} 
           color2={{background: color2}} 
@@ -108,6 +104,7 @@ export default function Flipper() {
           color4={{background: color4}} 
           color5={{background: color5}} 
           color6={{background: color6}} 
+          color7={{background: color7}} 
         />
     </div>
   )

@@ -9,6 +9,7 @@ export default function Pagination(props) {
       <span style={props.color4} className="pagination__dot pagination__dot--4"></span>
       <span style={props.color5} className="pagination__dot pagination__dot--5"></span>
       <span style={props.color6} className="pagination__dot pagination__dot--6"></span>
+      <span style={props.color7} className="pagination__dot pagination__dot--6"></span>
     </div>
   )
 }
