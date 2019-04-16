@@ -50,7 +50,6 @@ class Home extends Component {
   }
 
 
-
   render() {
     return (
       <Transition
@@ -63,6 +62,7 @@ class Home extends Component {
         {show => show && (props => (
           <animated.div style={props}>
             <div className="first-page-container">
+              <div onClick={this.routePage2} style={down}>down</div>
               <WelcomeText />
               <ScrollArrow />
               <Block1 />
@@ -80,6 +80,11 @@ class Home extends Component {
   }
 }
 
+const down = {
+  position: 'fixed',
+  bottom: 200,
+  right: 20
+}
 
 const HomeWithRouter = withRouter(Home);
 

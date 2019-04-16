@@ -429,6 +429,14 @@ a:link, a:visited {
     margin: 190px 0 0 250px;
     // border: 1px solid black;
 
+    @media (max-width: 1700px) {
+      margin: 150px 0 0 230px;
+    }
+
+    @media(max-width: 1550px) {
+      margin: 120px 0 0 180px;
+    }
+
     &__content {
       padding-top: 15px;
       margin-bottom: 25px;
@@ -501,6 +509,10 @@ a:link, a:visited {
 
       margin-top: 40px;
 
+      @media (max-width: 1500px) {
+        margin-top: 20px;
+      }
+
       div {
         display: inline-block;
         text-align: center;
@@ -522,14 +534,19 @@ a:link, a:visited {
 /* side decoration */
 
 .side-decoration {
-  // transform: rotate(270deg);
-  // transform: rotate(270deg) translateX(-51%);
+  transform: rotate(270deg) translateX(-55%) translateY(calc(-45vh + 100px));
   position: fixed;
   // border: 1px solid black;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+  width: 90vh;
+
+  @media(max-width: 1600px) {
+    transform: rotate(270deg) translateX(-55%) translateY(calc(-45vh + 70px))
+  }
 
   &__icon-container {
     display: flex;

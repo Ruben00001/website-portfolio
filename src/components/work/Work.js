@@ -60,7 +60,6 @@ class Work extends Component {
 
 
   render() {
-
     return (
       <Transition
       native
@@ -72,6 +71,8 @@ class Work extends Component {
       {show => show && (props => (
         <animated.div style={props}>
           <div className='work__container'>
+            <div onClick={this.routePage1} style={up}>UP</div>
+            <div onClick={this.routePage3} style={down}>down</div>
             <HeaderDecoration />
             <div className="flipper__container">
               <Flipper />
@@ -84,7 +85,17 @@ class Work extends Component {
   }
 }
 
+const up = {
+  position: 'fixed',
+  top: 20,
+  right: 20
+}
 
+const down = {
+  position: 'fixed',
+  bottom: 20,
+  right: 20
+}
 
 const WorkWithRouter = withRouter(Work)
 export default WorkWithRouter;

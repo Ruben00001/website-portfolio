@@ -23,6 +23,9 @@ class Page2 extends Component {
     }
 
     this.routePage2 = this.routePage2.bind(this);
+    this.pageUp = this.pageUp.bind(this);
+    this.onWheel = this.onWheel.bind(this);
+    // this.offsetWidth = this.offsetWidth.bind(this);
   }
 
   routePage2 = () => {
@@ -42,28 +45,29 @@ class Page2 extends Component {
     }
   }
 
-  offsetWidth = () => {
-    setTimeout(() => {
-      this.setState({
-        sideDecorationOffset: (this.myRef.current.offsetWidth / 2) - 100
-      })
-    }, 50);
-  }
+  // offsetWidth = () => {
+  //   setTimeout(() => {
+  //     this.setState({
+  //       // sideDecorationOffset: (this.myRef.current.offsetWidth / 2) - 100
+  //       sideDecorationOffset: {transform: `rotate(270deg) translateX(-50vh) translateY(-${(this.myRef.current.offsetWidth / 2) - 100}px)`}
+  //     })
+  //   }, 50);
+  // }
 
   componentDidMount() {
-    window.addEventListener('wheel', this.onWheel);
-    window.addEventListener('resize', this.offsetWidth);
     // this.offsetWidth();
+    window.addEventListener('wheel', this.onWheel);
+    // window.addEventListener('resize', this.offsetWidth);
     console.log('about page mounted ...');
+    // console.log(this.myRef.current);
   }
 
   componentWillUnmount() {
     window.addEventListener('wheel', this.onWheel);
-    window.addEventListener('resize', this.offsetWidth);
+    // window.addEventListener('resize', this.offsetWidth);
   }
 
   render() {
-    // this.offsetWidth();
     return (
       <React.Fragment>
         <Transition
@@ -76,7 +80,8 @@ class Page2 extends Component {
           {show => show && (props => (
             <animated.div style={props}>
               <div className="about__container">
-                <div ref={this.myRef} style={{transform: `rotate(270deg) translateX(-50vh) translateY(-${this.state.sideDecorationOffset}px)`}} className="side-decoration">
+                <div className="side-decoration">
+                {/* <div ref={this.myRef} style={this.state.sideDecorationOffset} className="side-decoration"> */}
                   <div className="side-decoration__icon-container">
                     <FontAwesomeIcon className="side-decoration__icon"  icon={faBolt}/>
                     <FontAwesomeIcon className="side-decoration__icon"  icon={faEye}/>
@@ -93,7 +98,7 @@ class Page2 extends Component {
                 </div>
                 <div className="about__container--top">
                   <div className="about__spiel">
-                    <AboutSpielTitle />
+                    <AboutSpielTitle /> {/* own component to animate separately - should change */}
                     <AboutSpielContent />
                     <AboutSpielInfo />
                     <AboutSpielIcons />
@@ -111,6 +116,7 @@ class Page2 extends Component {
     )
   }  
 }
+
 
 
 const Page2WithRouter = withRouter(Page2);
