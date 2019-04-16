@@ -34,5 +34,10 @@ export default function Block1() {
     },
     config: { duration: 300 }
   })
-  return <animated.div className="script-box" style={props} />
+  return (
+    <div className="animated-block animated-block--home-1">
+      <animated.div className="script-box" style={props} />
+    </div>
+  
+  )
 }

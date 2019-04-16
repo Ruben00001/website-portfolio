@@ -2,7 +2,7 @@ import React from 'react'
 import { useSpring, animated } from 'react-spring'
 
 
-export default function Block1() {
+export default function Block2() {
   const props = useSpring({
     from: { left: '100%', width: '0%', height: '100%', background: '#4A40FD' },
     to: async next => {
@@ -20,5 +20,9 @@ export default function Block1() {
     },
     config: { easing: 2 }
   })
-  return <animated.div className="script-box" style={props} />
+  return (
+    <div className="animated-block animated-block--home-2">
+      <animated.div className="script-box" style={props} />
+    </div>
+  )
 }

@@ -44,7 +44,7 @@ export const ProjectList = [
   {
     image: require('../img/nexter.JPG'),
     title: "Nexter Property",
-    type: 'mock website',
+    type: 'project',
     git: 'https://github.com/ruben00001/css-nexter--project',
     demo: 'https://ruben00001.github.io/css-nexter--project/'
   },

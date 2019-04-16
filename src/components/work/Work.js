@@ -51,6 +51,7 @@ class Work extends Component {
 
   componentDidMount() {
     window.addEventListener('wheel', this.onWheel);
+    console.log('Work page mounted...');
   }
 
   componentWillUnmount() {

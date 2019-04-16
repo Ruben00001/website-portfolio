@@ -19,13 +19,13 @@ const pages = ProjectList.map((project) => {
         config={{ delay: 800, duration: 800 }}
       >
       { props => (
-              <div style={props} className="flipper__info__container">
-              <h1 className="flipper__title">{project.title}</h1>
-              <div className="flipper__sub-title">
-                <div></div>
-                <h2>{project.type}</h2>
-              </div>
-            </div>
+        <div style={props} className="flipper__info__container">
+          <h1 className="flipper__title">{project.title}</h1>
+          <div className="flipper__sub-title">
+            <div></div>
+            <h2>{project.type}</h2>
+          </div>
+        </div>
       )}
     </Spring>
       <div className="flipper__links">
@@ -60,7 +60,7 @@ export default function Flipper() {
     setCount(count + 1);
     if(count === 1) {
       setColor1('black');
-      setColor6('rgb(192, 192, 192)')
+      setColor7('rgb(192, 192, 192)')
     }
     if(count === 2) {
       setColor2('black');
@@ -96,16 +96,16 @@ export default function Flipper() {
         const Page = pages[item]
         return <Page key={key} style={props} />
       })}
-        <p onClick={()=> {onClick(); paginationChangeColor(); }} className="flipper__next">next</p>  
-        <Pagination 
-          color1={{background: color1}} 
-          color2={{background: color2}} 
-          color3={{background: color3}} 
-          color4={{background: color4}} 
-          color5={{background: color5}} 
-          color6={{background: color6}} 
-          color7={{background: color7}} 
-        />
+      <p onClick={()=> {onClick(); paginationChangeColor(); }} className="flipper__next">next</p>  
+      <Pagination 
+        color1={{background: color1}} 
+        color2={{background: color2}} 
+        color3={{background: color3}} 
+        color4={{background: color4}} 
+        color5={{background: color5}} 
+        color6={{background: color6}} 
+        color7={{background: color7}} 
+      />
     </div>
   )
 }

@@ -2,27 +2,26 @@ import React from 'react'
 import { useSpring, animated } from 'react-spring'
 
 
-export default function Block1() {
+export default function Block5() {
   const props = useSpring({
-    from: { left: '0%', top: '0%', width: '100%', height: '0%', background: '#FFD753' },
+    from: { left: '0%', width: '0%', height: '100%', background: '#44C2FF' },
     to: async next => {
-        await next({ top: '0%', width: '100%', height: '100%', color: 'red', background: '#FFD753' })
-        await next({ width: '100%', height: '10%', color: 'blue', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'blue', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'blue', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'blue', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'blue', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'blue', background: '#FFD753' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
-        await next({ width: '100%', height: '0%', color: 'blue', background: '#F22F2D' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#F22F2D' })
+        await next({  left: '0%', width: '100%', height: '100%', background: '#44C2FF' })
+        await next({  left: '100%', width: '0%', height: '100%', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'red', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'blue', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'red', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'blue', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'red', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'blue', background: '#44C2FF' })
+        await next({  left: '0%', width: '100%', height: '100%', color: 'red', background: 'white' })
     },
-    config: { duration: 500 }
+    config: { easing: 2 }
   })
-  return <animated.div className="script-box" style={props} />
+  return (
+    <div className="animated-block animated-block--home-5">
+      <animated.div className="script-box" style={props} />
+    </div>
+  )
 }

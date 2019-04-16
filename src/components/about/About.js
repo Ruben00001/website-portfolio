@@ -15,8 +15,11 @@ class Page2 extends Component {
   constructor(props) {
     super(props);
 
+    this.myRef = React.createRef();
+
     this.state = {
       page2: true,
+      sideDecorationOffset: 0
     }
 
     this.routePage2 = this.routePage2.bind(this);
@@ -39,16 +42,28 @@ class Page2 extends Component {
     }
   }
 
+  offsetWidth = () => {
+    setTimeout(() => {
+      this.setState({
+        sideDecorationOffset: (this.myRef.current.offsetWidth / 2) - 100
+      })
+    }, 50);
+  }
+
   componentDidMount() {
     window.addEventListener('wheel', this.onWheel);
+    window.addEventListener('resize', this.offsetWidth);
+    // this.offsetWidth();
+    console.log('about page mounted ...');
   }
 
   componentWillUnmount() {
     window.addEventListener('wheel', this.onWheel);
+    window.addEventListener('resize', this.offsetWidth);
   }
 
   render() {
-
+    // this.offsetWidth();
     return (
       <React.Fragment>
         <Transition
@@ -61,19 +76,7 @@ class Page2 extends Component {
           {show => show && (props => (
             <animated.div style={props}>
               <div className="about__container">
-                <div className="about__container--top">
-                  <div className="about__spiel">
-                    <AboutSpielTitle />
-                    <AboutSpielContent />
-                    <AboutSpielInfo />
-                    <AboutSpielIcons />
-                  </div>
-                  {/* <AboutImageHeadshot /> */}
-                </div>
-                <div className="about__container--bottom">
-                  <AboutLanguages />
-                </div>
-                <div className="side-decoration">
+                <div ref={this.myRef} style={{transform: `rotate(270deg) translateX(-50vh) translateY(-${this.state.sideDecorationOffset}px)`}} className="side-decoration">
                   <div className="side-decoration__icon-container">
                     <FontAwesomeIcon className="side-decoration__icon"  icon={faBolt}/>
                     <FontAwesomeIcon className="side-decoration__icon"  icon={faEye}/>
@@ -88,6 +91,18 @@ class Page2 extends Component {
                     <FontAwesomeIcon className="side-decoration__icon"  icon={faBolt}/>           
                   </div>
                 </div>
+                <div className="about__container--top">
+                  <div className="about__spiel">
+                    <AboutSpielTitle />
+                    <AboutSpielContent />
+                    <AboutSpielInfo />
+                    <AboutSpielIcons />
+                  </div>
+                  {/* <AboutImageHeadshot /> */}
+                </div>
+                <div className="about__container--bottom">
+                  <AboutLanguages />
+                </div>
               </div>   
             </animated.div>
           ))}
@@ -97,13 +112,6 @@ class Page2 extends Component {
   }  
 }
 
-const Block1ContainerStyle = {
-  width: 20,
-  height: 60,
-  position: 'absolute',
-  bottom: 400,
-  left: 200
-}
 
 const Page2WithRouter = withRouter(Page2);
 export default Page2WithRouter
