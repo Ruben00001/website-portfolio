@@ -45,12 +45,16 @@ class Page2 extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('wheel', this.onWheel);
+    setTimeout(() => {
+      window.addEventListener('wheel', this.onWheel);
+      // console.log('wheel event added');
+    }, 500);
     console.log('about page mounted ...');
   }
 
   componentWillUnmount() {
     window.addEventListener('wheel', this.onWheel);
+    // console.log('About wheel event removed');
   }
 
   render() {

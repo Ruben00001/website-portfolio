@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
-import { Transition, animated } from 'react-spring/renderprops';
+import { Transition, animated } from 'react-spring/renderprops'
 import Flipper from './Flipper'
 import HeaderDecoration from './HeaderDecoration'
 
@@ -16,6 +16,10 @@ class Work extends Component {
     }
 
     this.routePage1 = this.routePage1.bind(this);
+    this.routePage3 = this.routePage3.bind(this);
+    this.pageUp = this.pageUp.bind(this);
+    this.pageDown = this.pageDown.bind(this);
+    this.onWheel = this.onWheel.bind(this);
   }
 
   routePage1 = () => {
@@ -50,12 +54,16 @@ class Work extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('wheel', this.onWheel);
+    setTimeout(() => {
+      window.addEventListener('wheel', this.onWheel);
+      // console.log('wheel event added');      
+    }, 500);
     console.log('Work page mounted...');
   }
 
   componentWillUnmount() {
     window.addEventListener('wheel', this.onWheel);
+    // console.log('work wheel event removed');
   }
 
 
@@ -71,8 +79,6 @@ class Work extends Component {
       {show => show && (props => (
         <animated.div style={props}>
           <div className='work__container'>
-            <div onClick={this.routePage1} style={up}>UP</div>
-            <div onClick={this.routePage3} style={down}>down</div>
             <HeaderDecoration />
             <div className="flipper__container">
               <Flipper />
@@ -83,18 +89,6 @@ class Work extends Component {
     </Transition>
     )
   }
-}
-
-const up = {
-  position: 'fixed',
-  top: 20,
-  right: 20
-}
-
-const down = {
-  position: 'fixed',
-  bottom: 20,
-  right: 20
 }
 
 const WorkWithRouter = withRouter(Work)

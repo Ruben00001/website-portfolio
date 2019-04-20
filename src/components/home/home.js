@@ -41,12 +41,16 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener('wheel', this.onWheel);
+    setTimeout(() => {
+      window.addEventListener('wheel', this.onWheel);
+      // console.log('wheel event added');
+    }, 500);
     console.log('Home page mounted...');
   }
 
   componentWillUnmount() {
     window.addEventListener('wheel', this.onWheel);
+    // console.log('home wheel event removed');
   }
 
 
@@ -62,7 +66,6 @@ class Home extends Component {
         {show => show && (props => (
           <animated.div style={props}>
             <div className="first-page-container">
-              <div onClick={this.routePage2} style={down}>down</div>
               <WelcomeText />
               <ScrollArrow />
               <Block1 />
@@ -78,12 +81,6 @@ class Home extends Component {
       </Transition>
     );
   }
-}
-
-const down = {
-  position: 'fixed',
-  bottom: 200,
-  right: 20
 }
 
 const HomeWithRouter = withRouter(Home);
