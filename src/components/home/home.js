@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { Transition, animated } from 'react-spring/renderprops';
+import Logo from '../pageLinks/Logo';
+import ProjectsLink from '../pageLinks/ProjectsLink';
+import AboutLink from '../pageLinks/AboutLink';
 import WelcomeText from './welcomeText';
-import ScrollArrow from './ScrollArrow'
 import Block1 from './blocks/Block1'
 import Block2 from './blocks/Block2'
 import Block3 from './blocks/Block3'
@@ -19,40 +21,23 @@ class Home extends Component {
       page1: true,
     }
 
-    this.routePage2 = this.routePage2.bind(this);
-    this.pageDown = this.pageDown.bind(this);
+    this.routeProjects = this.routeProjects.bind(this);
+    this.routeAbout = this.routeAbout.bind(this);
   }
 
-  routePage2 = () => {
+  routeProjects = () => {
+    this.setState({ 
+      page1: false,
+    });  
     setTimeout(() => {this.props.history.push('/work')}, 600)
   }
 
-  pageDown = () => {
+  routeAbout = () => {
     this.setState({ 
-      page1: false, //triggers the leave animation
-    });        
-    this.routePage2()
+      page1: false,
+    });  
+    setTimeout(() => {this.props.history.push('/about')}, 600)
   }
-
-  onWheel = e => {
-    if (e.deltaY > 0) {
-      this.pageDown();
-    }
-  };
-
-  componentDidMount() {
-    setTimeout(() => {
-      window.addEventListener('wheel', this.onWheel);
-      // console.log('wheel event added');
-    }, 500);
-    console.log('Home page mounted...');
-  }
-
-  componentWillUnmount() {
-    window.addEventListener('wheel', this.onWheel);
-    // console.log('home wheel event removed');
-  }
-
 
   render() {
     return (
@@ -61,13 +46,16 @@ class Home extends Component {
         items = { this.state.page1 }
         from={{ opacity: 1, marginTop: 0 }}
         enter={{ opacity: 1, marginTop: 0 }}
-        leave={{ opacity: 0, marginTop: -300 }}
+        leave={{ opacity: 0, marginTop: -600 }}
+        config={{ mass: 5, tension: 150, friction: 14 }}
       >
         {show => show && (props => (
           <animated.div style={props}>
             <div className="first-page-container">
+              <Logo />
+              <ProjectsLink route={this.routeProjects} />
+              <AboutLink route={this.routeAbout} />
               <WelcomeText />
-              <ScrollArrow />
               <Block1 />
               <Block2 />
               <Block3 />
@@ -83,7 +71,40 @@ class Home extends Component {
   }
 }
 
+const homeLogo = {
+  position: 'fixed',
+  top: 30,
+  left: 30
+}
+
 const HomeWithRouter = withRouter(Home);
 
 export default HomeWithRouter;
 
+
+
+  // pageDown = () => {
+  //   this.setState({ 
+  //     page1: false, //triggers the leave animation
+  //   });        
+  //   this.routePage2()
+  // }
+
+  // onWheel = e => {
+  //   if (e.deltaY > 0) {
+  //     this.pageDown();
+  //   }
+  // };
+
+  // componentDidMount() {
+  //   setTimeout(() => {
+  //     window.addEventListener('wheel', this.onWheel);
+  //     console.log('wheel event added');
+  //   }, 500);
+  //   console.log('Home page mounted...');
+  // }
+
+  // componentWillUnmount() {
+  //   window.addEventListener('wheel', this.onWheel);
+  //   console.log('home wheel event removed');
+  // }

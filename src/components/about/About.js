@@ -24,7 +24,7 @@ class Page2 extends Component {
 
     this.routePage2 = this.routePage2.bind(this);
     this.pageUp = this.pageUp.bind(this);
-    this.onWheel = this.onWheel.bind(this);
+    this.onWheelA = this.onWheelA.bind(this);
   }
 
   routePage2 = () => {
@@ -38,7 +38,7 @@ class Page2 extends Component {
     this.routePage2();
   }
 
-  onWheel = e => {
+  onWheelA = e => {
     if (e.deltaY < 0) {
       this.pageUp();        
     }
@@ -46,14 +46,14 @@ class Page2 extends Component {
 
   componentDidMount() {
     setTimeout(() => {
-      window.addEventListener('wheel', this.onWheel);
+      window.addEventListener('wheel', this.onWheelA);
       // console.log('wheel event added');
     }, 500);
     console.log('about page mounted ...');
   }
 
   componentWillUnmount() {
-    window.addEventListener('wheel', this.onWheel);
+    window.addEventListener('wheel', this.onWheelA);
     // console.log('About wheel event removed');
   }
 

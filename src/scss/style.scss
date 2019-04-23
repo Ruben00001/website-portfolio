@@ -6,6 +6,10 @@
   font-family: 'Hanken-Grotesk-Light';
   src: local('Hanken-Grotesk'), url(../assets/fonts/HankenGrotesk-Light.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Hanken-Grotesk-Bold';
+  src: local('Hanken-Grotesk'), url(../assets/fonts/HankenGrotesk-Bold.ttf) format('truetype');
+}
 
 * {
   margin: 0;
@@ -45,7 +49,9 @@ a:link, a:visited {
   }
 
   &__first-line {
-    font-size: 22px;
+    font-family: 'Hanken-Grotesk-Light';
+    font-size: 20px;
+    font-weight: bold;
     margin-bottom: 40px;
     // border: 1px solid black;
   }
@@ -53,6 +59,7 @@ a:link, a:visited {
   &__second-line {
     font-size: 75px;
     font-weight: bold;
+    font-family: 'Hanken-Grotesk-Bold';
     width: 1000px;
     display: flex;
     justify-content: flex-start; 
@@ -191,6 +198,10 @@ a:link, a:visited {
   &__icons-container {
     // border: 1px solid black;
     width: 60px;
+    cursor: pointer;
+    position: fixed;
+    top: 30px;
+    left: 30px;
 
     div {
       display: flex;
@@ -201,7 +212,8 @@ a:link, a:visited {
   }
 
   &__icon {
-    color: #FFE400;
+    // color: #FFE400;
+    color: inherit;
     margin: 3px;
     // border: 1px solid green;
 
@@ -251,7 +263,7 @@ a:link, a:visited {
     top: 50vh;
     left: 15vw;
     transform: translateY(-50%);
-    // border: 2px solid red;
+    border: 2px solid red;
   }
 
   &__image {
@@ -568,6 +580,27 @@ a:link, a:visited {
 }
 
 
+/* PAGE LINKS ********************************* */
+.page-link {
+  position: fixed;
+  font-weight: bold;
+  cursor: pointer;
+
+  &--projects {
+    top: 50px;
+    right: 50px;
+    transform: rotate(90deg) translate(10px, -30px);
+  }
+
+  &--about {
+    bottom: 50px;
+    left: 50px;
+    transform: rotate(270deg) translate(10px, -30px);
+  }
+}
+
+
+
 /* ANIMATED BLOCKS ********************************* */
 
 .script-box {
@@ -576,8 +609,95 @@ a:link, a:visited {
 }
 
 
+.flipper2 {
+  // border: 1px solid green;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  width: 85%; /* 100% minus the left value above */
+  overflow: hidden;
+  cursor: url('../assets/cursors/Picture1.png'), auto;
 
+  &__image {
+    position: relative;
+    will-change: width, height, left, top;
+    width: 350px;
+    height: 500px;
+    // border: 2px solid black;
 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      will-change: width, height, left, top;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 32%;
+    right: -66%;
+    font-size: 55px;
+    background-image: linear-gradient(to right, white, white 14.3%, black 14.3%, black 100%);
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__sub-title {
+    position: absolute;
+    top: 26%;
+    right: -130px;
+    font-family: 'Hanken-Grotesk-Light';
+    font-size: 16px; 
+  }
+
+  &__links {
+    // border: 1px solid black;
+    position: absolute;
+    bottom: 2%;
+    right: -57%;
+    transform: translateX(-50%);
+
+    a{
+      // color: white;
+      padding: 4px 6px 4px 6px;
+      font-size: 11px;
+    }
+  }
+}
+
+.page-counter {
+  // border: 1px solid red;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  right: 50px;
+  top: 32%;
+
+  &__line {
+    width: 1.5px;
+    height: 150px;
+    // border-right: .5px solid black;
+    margin: 10px 0 10px 0;
+    // background: linear-gradient(to bottom, black, black 20%, rgb(206, 206, 206) 20%, rgb(206, 206, 206) 100%);
+  }
+
+  &__number {
+    font-size: 11px;
+    font-weight: bold;
+  }
+}
+
+/* TEMPORARY */
+
+.test2 {
+  font-size: 14px;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+}
 
 
 

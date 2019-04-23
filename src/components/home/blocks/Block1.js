@@ -4,9 +4,9 @@ import { useSpring, animated } from 'react-spring'
 
 export default function Block1() {
   const props = useSpring({
-    from: { left: '0%', top: '100%', width: '100%', height: '0%', background: '#F22F2D' },
+    from: { left: '0%', top: '100%', width: '100%', height: '0%', background: '#F22F2D', marginTop: 20 },
     to: async next => {
-        await next({ top: '0%', width: '100%', height: '100%', color: 'red', background: '#F22F2D' })
+        await next({ top: '0%', width: '100%', height: '100%', color: 'red', background: '#F22F2D', marginTop: 0 })
         await next({ width: '100%', height: '10%', color: 'blue', background: '#F22F2D' })
         await next({ width: '100%', height: '100%', color: 'red', background: '#F22F2D' })
         await next({ width: '100%', height: '100%', color: 'blue', background: '#F22F2D' })
@@ -25,12 +25,11 @@ export default function Block1() {
         await next({ width: '100%', height: '100%', color: 'red', background: '#F22F2D' })
         await next({ width: '100%', height: '100%', color: 'blue', background: '#F22F2D' })
         await next({ width: '100%', height: '100%', color: 'red', background: '#F22F2D' })
-        await next({ width: '100%', height: '100%', color: 'blue', background: '#F22F2D' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#F22F2D' })
-        await next({ width: '100%', height: '100%', color: 'blue', background: '#F22F2D' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#F22F2D' })
         await next({ width: '100%', height: '0%', color: 'red', background: '#F22F2D' })
-        await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
+        await next({ width: '100%', height: '0%', color: 'blue', background: '#F22F2D' })
+        await next({ width: '100%', height: '0%', color: 'red', background: '#F22F2D' })
+        await next({ width: '100%', height: '0%', color: 'blue', background: '#F22F2D' })
+        await next({ width: '250%', height: '25%', color: 'red', background: '#FFD753' })
     },
     config: { duration: 300 }
   })

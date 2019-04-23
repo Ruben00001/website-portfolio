@@ -4,7 +4,7 @@ import { Spring } from 'react-spring/renderprops';
 export default function FirstLine() {
   return (
     <Spring
-      from={{ opacity: 0, marginTop: 20 }}
+      from={{ opacity: 0, marginTop: 25 }}
       to={{ opacity: 1, marginTop: 0 }}
       config={{ duration: 1000 }}
     >

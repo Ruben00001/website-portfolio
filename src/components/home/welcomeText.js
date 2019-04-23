@@ -9,25 +9,36 @@ class WelcomeText extends Component {
     super(props);
 
     this.state = {
-      switchLine: 1
+      switchLine: true
     }
+
+    this.switchLine = this.switchLine.bind(this);
+  }
+
+  switchLine = () => {
+    setInterval(() => { this.setState({ switchLine: !this.state.switchLine }) }, 6000);
+  }
+
+  componentDidMount() {
+    this.switchLine();
+  }
+
+  componentWillUnmount() {
+    this.switchLine();
   }
 
   render() {
-    if (this.state.switchLine === 1) {
-      setTimeout(() => { this.setState({ switchLine: 2 }) }, 7000);
-    }
     
     return (
       <div className="welcome-text">
         < FirstLine />
-        {this.state.switchLine===1 && 
-            <div style={{marginLeft: '130px'}} className="welcome-text__second-line">
+        {this.state.switchLine && 
+            <div style={{marginLeft: '235px'}} className="welcome-text__second-line">
               <SecondLineA />  
             </div>
         }
-        {this.state.switchLine===2 && 
-            <div style={{marginLeft: '40px'}} className="welcome-text__second-line">
+        {!this.state.switchLine && 
+            <div style={{marginLeft: '70px'}} className="welcome-text__second-line">
               <SecondLineB />
             </div>
         }

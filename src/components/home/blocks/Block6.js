@@ -19,10 +19,16 @@ export default function Block1() {
         await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
         await next({ width: '100%', height: '100%', color: 'blue', background: '#FFD753' })
         await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
+        await next({ width: '100%', height: '100%', color: 'blue', background: '#FFD753' })
+        await next({ width: '100%', height: '100%', color: 'red', background: '#FFD753' })
         await next({ width: '100%', height: '0%', color: 'blue', background: '#F22F2D' })
+        await next({ width: '100%', height: '0%', color: 'red', background: '#F22F2D' })
+        await next({ width: '100%', height: '0%', color: 'blue', background: '#F22F2D' })
+        await next({ width: '100%', height: '0%', color: 'red', background: '#F22F2D' })
         await next({ width: '100%', height: '100%', color: 'red', background: '#F22F2D' })
     },
-    config: { duration: 500 }
+    config: { duration: 400 },
+    
   })
   return (
     <div className="animated-block animated-block--home-6">
