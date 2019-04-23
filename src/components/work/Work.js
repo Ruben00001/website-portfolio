@@ -109,8 +109,8 @@ class Work extends Component {
         height: '100%',
         opacity: 1,
         titleMarginTop: 0,
-        project: 2,
-        pageCounterBackground: 40,
+        project: this.state.project === 5 ? 1 : this.state.project + 1,
+        pageCounterBackground: this.state.project === 5 ? 20 : this.state.pageCounterBackground + 20,
       });
     }, 1200)
   }
@@ -153,7 +153,7 @@ class Work extends Component {
                 to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
                 config={{ delay: this.state.delayTitle, duration: 300 }}>
                 { props => (
-                  <h2 style={props} className="flipper2__title">Amy's <br/> Jewellery</h2>
+                  <h2 style={props} className="flipper2__title flipper2__title--1">Amy's <br/> Jewellery</h2>
                 )}
               </Spring>
               <Spring
@@ -183,17 +183,25 @@ class Work extends Component {
               <Spring
                 from={{ top: '100%', width: '100%', height: '0%' }}
                 to={{ top: this.state.top, width: '100%', height: this.state.height, opacity: this.state.opacity }}
-                config={{ mass: 6, tension: 350, friction: 80 }}>
+                config={{ delay: this.state.delayImage ,mass: 6, tension: 350, friction: 80 }}>
                 { props => (
-                  <img style={props} src={require('../../img/XX__Amy3.png')} alt=""/>
+                  <img style={props} src={require('../../img/GentleEnergy-Complete.JPG')} alt=""/>
                 )}
               </Spring>
               <Spring
                 from={{ marginTop: 13, opacity: 0 }}
                 to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
-                config={{ delay: 380, duration: 300 }}>
+                config={{ delay: this.state.delayTitle, duration: 300 }}>
                 { props => (
-                  <h2 style={props} className="flipper2__title">Amy's <br/> Jewellery</h2>
+                  <h2 style={props} className="flipper2__title flipper2__title--2">Gentle <br/> Energy</h2>
+                )}
+              </Spring>
+              <Spring
+                from={{ marginTop: 13, opacity: 0 }}
+                to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                config={{ delay: this.state.delaySubTitle, duration: 300 }}>
+                { props => (
+                  <h3 style={props} className="flipper2__sub-title">website ---</h3>
                 )}
               </Spring>
               <Spring
@@ -201,7 +209,119 @@ class Work extends Component {
                 to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
                 config={{ delay: 480, duration: 300 }}>
                 { props => (
-                  <h3 style={props} className="flipper2__sub-title">website ---</h3>
+                  <div style={props} className="flipper2__links">
+                    <a href="" target="__blank">CODE</a>
+                    <a href="" target="__blank">LAUNCH</a>
+                  </div>
+                )}
+              </Spring>
+            </div>
+          }
+          {
+            this.state.project === 3 && 
+            <div className="flipper2__image">
+              <Spring
+                from={{ top: '100%', width: '100%', height: '0%' }}
+                to={{ top: this.state.top, width: '100%', height: this.state.height, opacity: this.state.opacity }}
+                config={{ delay: this.state.delayImage ,mass: 6, tension: 350, friction: 80 }}>
+                { props => (
+                  <img style={props} src={require('../../img/MountApp-Complete.JPG')} alt=""/>
+                )}
+              </Spring>
+              <Spring
+                from={{ marginTop: 13, opacity: 0 }}
+                to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                config={{ delay: this.state.delayTitle, duration: 300 }}>
+                { props => (
+                  <h2 style={props} className="flipper2__title flipper2__title--3">MountApp</h2>
+                )}
+              </Spring>
+              <Spring
+                from={{ marginTop: 13, opacity: 0 }}
+                to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                config={{ delay: this.state.delaySubTitle, duration: 300 }}>
+                { props => (
+                  <h3 style={props} className="flipper2__sub-title">project ---</h3>
+                )}
+              </Spring>
+              <Spring
+                from={{ marginTop: 13, opacity: 0 }}
+                to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                config={{ delay: 480, duration: 300 }}>
+                { props => (
+                  <div style={props} className="flipper2__links">
+                    <a href="" target="__blank">CODE</a>
+                    <a href="" target="__blank">LAUNCH</a>
+                  </div>
+                )}
+              </Spring>
+            </div>
+          }
+          {
+            this.state.project === 4 && 
+            <div className="flipper2__image">
+              <Spring
+                from={{ top: '100%', width: '100%', height: '0%' }}
+                to={{ top: this.state.top, width: '100%', height: this.state.height, opacity: this.state.opacity }}
+                config={{ delay: this.state.delayImage ,mass: 6, tension: 350, friction: 80 }}>
+                { props => (
+                  <img style={props} src={require('../../img/Calculator-complete.JPG')} alt=""/>
+                )}
+              </Spring>
+              <Spring
+                from={{ marginTop: 13, opacity: 0 }}
+                to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                config={{ delay: this.state.delayTitle, duration: 300 }}>
+                { props => (
+                  <h2 style={props} className="flipper2__title flipper2__title--4">Calculator</h2>
+                )}
+              </Spring>
+              <Spring
+                from={{ marginTop: 13, opacity: 0 }}
+                to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                config={{ delay: this.state.delaySubTitle, duration: 300 }}>
+                { props => (
+                  <h3 style={props} className="flipper2__sub-title">project ---</h3>
+                )}
+              </Spring>
+              <Spring
+                from={{ marginTop: 13, opacity: 0 }}
+                to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                config={{ delay: 480, duration: 300 }}>
+                { props => (
+                  <div style={props} className="flipper2__links">
+                    <a href="" target="__blank">CODE</a>
+                    <a href="" target="__blank">LAUNCH</a>
+                  </div>
+                )}
+              </Spring>
+            </div>
+          }
+          {
+            this.state.project === 5 && 
+            <div className="flipper2__image">
+              <Spring
+                from={{ top: '100%', width: '100%', height: '0%' }}
+                to={{ top: this.state.top, width: '100%', height: this.state.height, opacity: this.state.opacity }}
+                config={{ delay: this.state.delayImage ,mass: 6, tension: 350, friction: 80 }}>
+                { props => (
+                  <img style={props} src={require('../../img/WeatherAPI-complete.JPG')} alt=""/>
+                )}
+              </Spring>
+              <Spring
+                from={{ marginTop: 13, opacity: 0 }}
+                to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                config={{ delay: this.state.delayTitle, duration: 300 }}>
+                { props => (
+                  <h2 style={props} className="flipper2__title flipper2__title--5">Weather<br />API</h2>
+                )}
+              </Spring>
+              <Spring
+                from={{ marginTop: 13, opacity: 0 }}
+                to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                config={{ delay: this.state.delaySubTitle, duration: 300 }}>
+                { props => (
+                  <h3 style={props} className="flipper2__sub-title">project ---</h3>
                 )}
               </Spring>
               <Spring
