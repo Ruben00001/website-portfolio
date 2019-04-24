@@ -18,6 +18,10 @@
   font-family: 'Hanken-Grotesk';
 }
 
+body {
+  overflow: hidden;
+}
+
 a:link, a:visited {
   color: black;
   text-decoration: none;
@@ -408,15 +412,16 @@ a:link, a:visited {
     display: relative;
 
     &--top {
-      height: 85%;
+      height: 70%;
       // border: 1px solid black;
       display: flex;
+      justify-content: center;
     }
 
-    &--bottom {
-      display: flex;
-      justify-content: flex-end;
-    }
+    // &--bottom {
+    //   display: flex;
+    //   justify-content: flex-end;
+    // }
   }
 
   &__title {
@@ -431,57 +436,145 @@ a:link, a:visited {
     div {
       width: 100%;
       height: 1px;
-      border: .5px solid black;
+      // border: .5px solid black;
       margin-left: 15px;
     }
   }
 
   &__spiel {
-    max-width: 500px;
-    margin: 190px 0 0 250px;
+    width: 60%;
+    margin-top: 350px;
     // border: 1px solid black;
 
-    @media (max-width: 1700px) {
-      margin: 150px 0 0 230px;
-    }
-
-    @media(max-width: 1550px) {
-      margin: 120px 0 0 180px;
-    }
 
     &__content {
-      padding-top: 15px;
-      margin-bottom: 25px;
-      font-size: 14px; 
-      line-height: 27px;
-      max-width: 500px;
-    }
+      font-size: 30px; 
+      line-height: 40px;
 
-    &__info {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
+      span {
+        display: inline-block;
+      }
 
-      h2 {
+      &__span--1 {
+        font-size: 29px;
+      }
+
+      &__span--2 {
+        font-size: 28px;
+      }
+
+      &__span--3 {
+        font-size: 27px;
+      }
+
+      &__span--4 {
+        font-size: 26px;
+      }
+
+      &__span--5 {
+        font-size: 25px;
+      }
+
+      &__span--6 {
+        font-size: 24px;
+      }
+
+      &__span--7 {
+        font-size: 23px;
+      }
+
+      &__span--8 {
+        font-size: 22px;
+      }
+
+      &__span--9 {
+        font-size: 21px;
+      }
+
+      &__span--10 {
+        font-size: 20px;
+      }
+
+      &__span--11 {
+        font-size: 19px;
+      }
+
+      &__span--12 {
+        font-size: 18px;
+      }
+
+      &__span--13 {
+        font-size: 17px;
+      }
+
+      &__span--14 {
+        font-size: 16px;
+      }
+
+      &__span--15 {
         font-size: 15px;
-        font-weight: 400;
-        width: 110px;
       }
 
-      p {
-        font-size: 13px;   
+      &__span--16 {
+        font-size: 14px;
+      }
+
+      &__span--17 {
+        font-size: 13px;
+      }
+
+      &__span--18 {
+        font-size: 12px;
+      }
+
+      &__span--19 {
+        font-size: 11px;
+      }
+
+      &__span--20 {
+        font-size: 10px;
+      }
+
+      &__span--21 {
+        font-size: 9px;
+      }
+
+      &__span--22 {
+        font-size: 8px;
+      }
+
+      &__span--23 {
+        font-size: 7px;
+      }
+
+      &__span--24 {
+        font-size: 6px;
+      }
+      &__span--25 {
+        font-size: 5px;
+      }
+      &__span--26 {
+        font-size: 4px;
       }
     }
 
-    &__icons {
-      margin-top: 30px;
+    &__link {
+      margin: 20px 0;
       font-size: 18px;
-      padding-top: 15px;
 
-      a {
-        margin-right: 20px;
+      &--linkedin {
+        margin-top: 100px;
+      }
+
+      &--email {
+        display: flex;
+
+        p {
+          margin-right: 10px;
+        }
       }
     }
+
   }
 
 

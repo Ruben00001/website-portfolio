@@ -17,7 +17,7 @@ export default function SecondLineB() {
 
   const reset = useCallback(() => {
     someStringArray.forEach((item, itemIndex) => {
-      setTimeout(() => set(someStringArray.slice(0, itemIndex + 1)), itemIndex * 60)
+      setTimeout(() => set(someStringArray.slice(0, itemIndex + 1)), itemIndex * 50)
     })
   }, []);
 
