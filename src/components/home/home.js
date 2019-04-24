@@ -5,13 +5,8 @@ import Logo from '../pageLinks/Logo';
 import ProjectsLink from '../pageLinks/ProjectsLink';
 import AboutLink from '../pageLinks/AboutLink';
 import WelcomeText from './welcomeText';
-import Block1 from './blocks/Block1'
-import Block2 from './blocks/Block2'
-import Block3 from './blocks/Block3'
-import Block4 from './blocks/Block4'
-import Block5 from './blocks/Block5'
-import Block6 from './blocks/Block6'
-import Block7 from './blocks/Block7'
+import Blocks from './Blocks'
+
 
 class Home extends Component {
   constructor(props) {
@@ -41,70 +36,30 @@ class Home extends Component {
 
   render() {
     return (
-      <Transition
-        native
-        items = { this.state.page1 }
-        from={{ opacity: 1, marginTop: 0 }}
-        enter={{ opacity: 1, marginTop: 0 }}
-        leave={{ opacity: 0, marginTop: -600 }}
-        config={{ mass: 5, tension: 150, friction: 14 }}
-      >
-        {show => show && (props => (
-          <animated.div style={props}>
-            <div className="first-page-container">
-              <Logo />
-              <ProjectsLink route={this.routeProjects} />
-              <AboutLink route={this.routeAbout} />
+      <div className="first-page-container">
+        <Logo />
+        <ProjectsLink route={this.routeProjects} />
+        <AboutLink route={this.routeAbout} />
+        <Transition
+          native
+          items = { this.state.page1 }
+          from={{ opacity: 1, marginTop: 0 }}
+          enter={{ opacity: 1, marginTop: 0 }}
+          leave={{ opacity: 0, marginTop: -600 }}
+          config={{ mass: 5, tension: 150, friction: 14 }}
+        >
+          {show => show && (props => (
+            <animated.div style={props}>
               <WelcomeText />
-              <Block1 />
-              <Block2 />
-              <Block3 />
-              <Block4 />
-              <Block5 />
-              <Block6 />
-              <Block7 />
-            </div>          
-          </animated.div>
-        ))}
-      </Transition>
+              <Blocks />           
+            </animated.div>
+          ))}
+        </Transition>
+      </div>   
     );
   }
 }
 
-const homeLogo = {
-  position: 'fixed',
-  top: 30,
-  left: 30
-}
 
 const HomeWithRouter = withRouter(Home);
-
 export default HomeWithRouter;
-
-
-
-  // pageDown = () => {
-  //   this.setState({ 
-  //     page1: false, //triggers the leave animation
-  //   });        
-  //   this.routePage2()
-  // }
-
-  // onWheel = e => {
-  //   if (e.deltaY > 0) {
-  //     this.pageDown();
-  //   }
-  // };
-
-  // componentDidMount() {
-  //   setTimeout(() => {
-  //     window.addEventListener('wheel', this.onWheel);
-  //     console.log('wheel event added');
-  //   }, 500);
-  //   console.log('Home page mounted...');
-  // }
-
-  // componentWillUnmount() {
-  //   window.addEventListener('wheel', this.onWheel);
-  //   console.log('home wheel event removed');
-  // }

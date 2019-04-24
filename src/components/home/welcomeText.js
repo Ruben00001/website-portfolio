@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import FirstLine from './FirstLine';
-import SecondLineA from './SecondLineA';
-import SecondLineB from './SecondLineB';
+import FirstLine from './welcome-text/FirstLine';
+import SecondLineA from './welcome-text/SecondLineA';
+import SecondLineB from './welcome-text/SecondLineB';
 
 
 class WelcomeText extends Component {
