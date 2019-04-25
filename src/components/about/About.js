@@ -4,58 +4,18 @@ import { Transition, animated } from 'react-spring/renderprops'
 import Logo from '../pageLinks/Logo';
 import ProjectsLink from '../pageLinks/ProjectsLink';
 import AboutLink from '../pageLinks/AboutLink';
-import AboutSpielTitle from './AboutSpielTitle'
-import AboutSpielContent from './AboutSpielContent'
-import AboutSpielInfo from './AboutSpielInfo'
-import AboutSpielIcons from './AboutSpielIcons'
-import AboutImageHeadshot from './AboutImageHeadshot'
-import AboutLanguages from './AboutLanguages'
 
 
 class Page2 extends Component {
   constructor(props) {
     super(props);
 
-    this.myRef = React.createRef();
-
     this.state = {
       controlLeaveAnimation: true,
-      sideDecorationOffset: 0
     }
 
-    this.routePage2 = this.routePage2.bind(this);
-    this.pageUp = this.pageUp.bind(this);
-    this.onWheelA = this.onWheelA.bind(this);
-  }
-
-  routePage2 = () => {
-    setTimeout(() => {this.props.history.push('/work')}, 600)
-  }
-
-  pageUp = () => {
-    this.setState({
-      page2: false,
-    });
-    this.routePage2();
-  }
-
-  onWheelA = e => {
-    if (e.deltaY < 0) {
-      this.pageUp();        
-    }
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      // window.addEventListener('wheel', this.onWheelA);
-      // console.log('wheel event added');
-    }, 500);
-    console.log('about page mounted ...');
-  }
-
-  componentWillUnmount() {
-    // window.addEventListener('wheel', this.onWheelA);
-    // console.log('About wheel event removed');
+    this.routeHome = this.routeHome.bind(this);
+    this.routeProjects = this.routeProjects.bind(this);
   }
 
   routeHome = () => {

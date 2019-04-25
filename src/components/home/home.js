@@ -13,7 +13,7 @@ class Home extends Component {
     super(props);
 
     this.state = {
-      page1: true,
+      controlLeaveAnimation: true, // triggers transition leave animation
     }
 
     this.routeProjects = this.routeProjects.bind(this);
@@ -22,14 +22,14 @@ class Home extends Component {
 
   routeProjects = () => {
     this.setState({ 
-      page1: false,
+      controlLeaveAnimation: false,
     });  
     setTimeout(() => {this.props.history.push('/work')}, 600)
   }
 
   routeAbout = () => {
     this.setState({ 
-      page1: false,
+      controlLeaveAnimation: false,
     });  
     setTimeout(() => {this.props.history.push('/about')}, 600)
   }
@@ -42,7 +42,7 @@ class Home extends Component {
         <AboutLink route={this.routeAbout} />
         <Transition
           native
-          items = { this.state.page1 }
+          items = { this.state.controlLeaveAnimation }
           from={{ opacity: 1, marginTop: 0 }}
           enter={{ opacity: 1, marginTop: 0 }}
           leave={{ opacity: 0, marginTop: -600 }}

@@ -29,90 +29,10 @@ class Work extends Component {
       delaySubTitle: 480
     }
 
-    this.routePage1 = this.routePage1.bind(this);
-    this.routePage3 = this.routePage3.bind(this);
-    this.pageUp = this.pageUp.bind(this);
-    this.pageDown = this.pageDown.bind(this);
-    this.onWheelW = this.onWheelW.bind(this);
-  }
-
-  routePage1 = () => {
-    setTimeout(() => {this.props.history.push('/')}, 600)
-  }
-
-  routePage3 = () => {
-    setTimeout(() => {this.props.history.push('/about')}, 600)
-  }
-
-  pageUp = () => {
-    this.setState({ 
-      show: false 
-    }); 
-    this.routePage1()
-  }
-
-  pageDown = () => {
-    this.setState({ 
-      show: false
-    }); 
-    this.routePage3();
-  }
-
-  onWheelW = e => {
-    if (e.deltaY < 0) {
-      this.pageUp();
-    }
-    if (e.deltaY > 0) {
-      this.pageDown();
-    }
-  }
-
-  triggerProject1 = () => {
-    this.setState({
-      project1: false
-    });
-    setTimeout(() => {
-      this.changeProject()
-    }, 2000)
-  }
-
-  changeProject = () => {
-    this.setState({
-      project: this.state.project + 1
-    })
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      // window.addEventListener('wheel', this.onWheelW);
-      // console.log('wheel event added');      
-    }, 500);
-    console.log('Work page mounted...');
-  }
-
-  componentWillUnmount() {
-    // window.addEventListener('wheel', this.onWheelW);
-    // console.log('work wheel event removed');
-  }
-
-  setAnimationLeaveValues = () => {
-    this.setState({
-      height: '0%',
-      opacity: 0,
-      titleMarginTop: -20,
-      delayImage: 400,
-      delayTitle: 600,
-      delaySubTitle: 200
-    });
-    setTimeout(() => {
-      this.setState({
-        height: '100%',
-        opacity: 1,
-        titleMarginTop: 0,
-        project: this.state.project === 5 ? 1 : this.state.project + 1,
-        pageCounterBackground: this.state.project === 5 ? 20 : this.state.pageCounterBackground + 20,
-      });
-    }, 1200)
+    this.routeHome = this.routeHome.bind(this);
+    this.routeAbout = this.routeAbout.bind(this);
+    this.nextProject = this.nextProject.bind(this);
+    this.setAnimationLeaveValues = this.setAnimationLeaveValues.bind(this);
   }
 
   routeHome = () => {
@@ -128,6 +48,31 @@ class Work extends Component {
     });  
     setTimeout(() => {this.props.history.push('/about')}, 600)
   }
+
+  nextProject = () => {
+    setTimeout(() => {
+      this.setState({
+        height: '100%',
+        opacity: 1,
+        titleMarginTop: 0,
+        project: this.state.project === 5 ? 1 : this.state.project + 1,
+        pageCounterBackground: this.state.project === 5 ? 20 : this.state.pageCounterBackground + 20,
+      });
+    }, 1200)
+  }
+
+  setAnimationLeaveValues = () => {
+    this.setState({
+      height: '0%',
+      opacity: 0,
+      titleMarginTop: -20,
+      delayImage: 400,
+      delayTitle: 600,
+      delaySubTitle: 200
+    });
+    this.nextProject();
+  }
+
 
   render() {
     return (
@@ -362,82 +307,3 @@ class Work extends Component {
 
 const WorkWithRouter = withRouter(Work)
 export default WorkWithRouter;
-
-// return (
-//   <Transition
-//   native
-//   items = { this.state.show }
-//   from={{ opacity: 1, marginTop: 0 }}
-//   enter={{ opacity: 1, marginTop: 0 }}
-//   leave={{ opacity: 0, marginTop: 0 }}
-// >
-//   {show => show && (props => (
-//     <animated.div style={props}>
-//       <div className='work__container'>
-//         {/* <HeaderDecoration />
-//         <div className="flipper__container">
-//           <Flipper />
-//         </div> */}
-//         {/* <Flipper2 /> */}
-//         <div onClick={this.triggerProject1} className="flipper2">
-//           { this.state.project === 1 &&
-//               <div className="flipper2__image">
-//                   <Transition
-//                     native
-//                     items={this.state.project1}
-//                     from={{ top: '100%', width: '100%', height: '0%' }}
-//                     enter={{ top: '0%', width: '100%', height: '100%', opacity: 1 }}
-//                     leave={{ top: '0%', width: '100%', height: '0%', opacity: 0 }}
-//                     config={{ mass: 6, tension: 350, friction: 80 }}
-//                   >
-//                     {show => show && (props => (
-//                       <animated.img style={props} src={require('../../img/XX__Amy3.png')} alt=""/>
-//                     ))}
-//                   </Transition>
-//                   <Spring
-//                     from={{ opacity: 0 }}
-//                     to={{ opacity: 1 }}
-//                     config={{ duration: 6000 }}
-//                     >
-//                     { props => (
-//                       <h2 style={props} className="flipper2__title">Amy's <br/> Jewellery</h2>
-//                     )}
-//                   </Spring>
-//               </div>    
-//           }
-//           { this.state.project === 2 &&
-//             <Transition
-//               native
-//               items={true}
-//               from={{ opacity: 1 }}
-//               enter={{ opacity: 1 }}
-//               leave={{ opacity: 1 }}
-//               config={{duration: 200 }}
-//             >
-//               {show => show && (props => (
-//                 <animated.div style={props}>
-//                   <div className="flipper2__image">
-//                     <Transition
-//                       native
-//                       items={true}
-//                       from={{ top: '100%', width: '100%', height: '0%' }}
-//                       enter={{ top: '0%', width: '100%', height: '100%' }}
-//                       leave={{ top: '0%', width: '100%', height: '0%' }}
-//                       config={{ mass: 1, tension: 280, friction: 60 }}
-//                     >
-//                       {show => show && (props => (
-//                         <animated.img style={props} src={require('../../img/Calculator.JPG')} alt=""/>
-//                       ))}
-//                     </Transition>
-//                   </div>    
-//                 </animated.div>
-//               ))}
-//             </Transition>
-//           }
-          
-//         </div>
-//       </div>        
-//     </animated.div>
-//   ))}
-// </Transition>
-// )
