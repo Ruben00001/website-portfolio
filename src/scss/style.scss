@@ -279,6 +279,29 @@ a:link, a:visited {
       position: relative;
       will-change: width, height, left, top;
     }
+
+    &--more-projects {
+      width: 700px;
+      border: 1px solid black;
+
+      div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        // color: black;
+        background: white;
+        font-size: 50px;
+        will-change: width, height, left, top;
+        text-align: center;
+        padding-top: 25%;
+
+        p {
+          border: 1px solid black;
+          display: inline-block;
+          cursor: pointer;
+        }
+      }
+    }
   }
 
   &__title {
@@ -397,6 +420,7 @@ a:link, a:visited {
       }
     }
   }
+
 }
 
 /* Page Counter */

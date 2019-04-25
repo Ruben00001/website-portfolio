@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { Transition, animated, Spring } from 'react-spring/renderprops'
-import { throttle } from 'react-throttle'
 import Logo from '../pageLinks/Logo';
 import ProjectsLink from '../pageLinks/ProjectsLink';
 import AboutLink from '../pageLinks/AboutLink';
@@ -14,11 +13,12 @@ class Work extends Component {
     this.state = {
       controlLeaveAnimation: true,
       project: 1,
+      totalProjects: 5,
       top: '0%',
       height: '100%',
       opacity: 1,
       titleMarginTop: 0,
-      pageCounterBackground: 20,
+      pageCounterBackground: (100 / 5),
       delayImage: 0,
       delayTitle: 380,
       delaySubTitle: 480,
@@ -51,8 +51,8 @@ class Work extends Component {
         height: '100%',
         opacity: 1,
         titleMarginTop: 0,
-        project: this.state.project === 5 ? 1 : this.state.project + 1,
-        pageCounterBackground: this.state.project === 5 ? 20 : this.state.pageCounterBackground + 20,
+        project: this.state.project === this.state.totalProjects ? 1 : this.state.project + 1,
+        pageCounterBackground: this.state.project === this.state.totalProjects ? (100 / this.state.totalProjects) : this.state.pageCounterBackground + (100 / this.state.totalProjects),
         wait: false
       });
     }, 1200)
@@ -285,6 +285,21 @@ class Work extends Component {
                   </Spring>
                 </div>
               }
+              {/* { this.state.project === 6 && 
+                <div className="flipper2__image flipper2__image--more-projects">
+                  <Spring
+                    from={{ top: '100%', width: '100%', height: '0%' }}
+                    to={{ top: this.state.top, width: '100%', height: this.state.height, opacity: this.state.opacity }}
+                    config={{ delay: this.state.delayImage, mass: 6, tension: 350, friction: 80 }}>
+                    { props => (
+                      <div style={props} >
+                        <p>View More Work</p>                        
+                        <p><br />See GitHub</p>                        
+                      </div>
+                    )}
+                  </Spring>
+                </div>
+              } */}
               <div className="page-counter">
                 <div className="page-counter__number">0{this.state.project}.</div>
                 <Spring
@@ -295,7 +310,7 @@ class Work extends Component {
                     <div style={props} className="page-counter__line"></div>
                   )}
                 </Spring>
-                <div className="page-counter__number">05.</div>
+                <div className="page-counter__number">0{this.state.totalProjects}.</div>
               </div>
             </animated.div> 
           ))}
