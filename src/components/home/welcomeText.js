@@ -31,14 +31,14 @@ class WelcomeText extends Component {
     
     return (
       <div className="welcome-text">
-        < FirstLine />
+        <FirstLine />
         {this.state.switchLine && 
-            <div style={{marginLeft: '235px'}} className="welcome-text__second-line">
+            <div className="welcome-text__second-line welcome-text__second-line--a">
               <SecondLineA />  
             </div>
         }
         {!this.state.switchLine && 
-            <div style={{marginLeft: '70px'}} className="welcome-text__second-line">
+            <div className="welcome-text__second-line welcome-text__second-line--b">
               <SecondLineB />
             </div>
         }

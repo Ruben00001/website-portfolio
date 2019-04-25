@@ -24,7 +24,7 @@ class Home extends Component {
     this.setState({ 
       controlLeaveAnimation: false,
     });  
-    setTimeout(() => {this.props.history.push('/work')}, 600)
+    setTimeout(() => {this.props.history.push('/projects')}, 600)
   }
 
   routeAbout = () => {

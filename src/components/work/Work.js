@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { Transition, animated, Spring } from 'react-spring/renderprops'
+import { throttle } from 'react-throttle'
 import Logo from '../pageLinks/Logo';
 import ProjectsLink from '../pageLinks/ProjectsLink';
 import AboutLink from '../pageLinks/AboutLink';
@@ -12,10 +13,7 @@ class Work extends Component {
 
     this.state = {
       controlLeaveAnimation: true,
-      paginationActive: 'black',
-      paginationInActive: 'rgb(192, 192, 192)',
       project: 1,
-      project1: true,
       top: '0%',
       height: '100%',
       opacity: 1,
@@ -23,7 +21,8 @@ class Work extends Component {
       pageCounterBackground: 20,
       delayImage: 0,
       delayTitle: 380,
-      delaySubTitle: 480
+      delaySubTitle: 480,
+      wait: false
     }
 
     this.routeHome = this.routeHome.bind(this);
@@ -54,21 +53,25 @@ class Work extends Component {
         titleMarginTop: 0,
         project: this.state.project === 5 ? 1 : this.state.project + 1,
         pageCounterBackground: this.state.project === 5 ? 20 : this.state.pageCounterBackground + 20,
+        wait: false
       });
     }, 1200)
   }
 
   setAnimationLeaveValues = () => {
-    this.setState({
-      height: '0%',
-      opacity: 0,
-      titleMarginTop: -20,
-      delayImage: 400,
-      delayTitle: 600,
-      delaySubTitle: 200
-    });
-    this.nextProject();
-  }
+    if(this.state.wait === false) {
+      this.setState({
+        height: '0%',
+        opacity: 0,
+        titleMarginTop: -20,
+        delayImage: 400,
+        delayTitle: 600,
+        delaySubTitle: 200,
+        wait: true
+      });
+      this.nextProject();
+    }
+  };
 
 
   render() {

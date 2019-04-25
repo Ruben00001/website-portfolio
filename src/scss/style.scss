@@ -15,6 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
   font-family: 'Hanken-Grotesk';
 }
 
@@ -32,7 +33,7 @@ a:link, a:visited {
 
 .home__container {
   position: relative;
-  width: 90%;
+  width: 94%;
   height: 100vh;
   margin: auto;
   display: flex;
@@ -101,6 +102,22 @@ a:link, a:visited {
     @media (max-width: 1100px) {
       font-size: 45px;
       width: 620px;
+    }
+
+    &--a {
+      margin-left: 310px;
+
+      @media (max-width: 1680px) {
+        margin-left: 220px;
+      }
+    }
+
+    &--b {
+      margin-left: 100px;
+
+      @media (max-width: 1680px) {
+        margin-left: 40px;
+      }
     }
   }
 }
@@ -199,13 +216,15 @@ a:link, a:visited {
 
 .work {
   &__container {
-    width: 100%;
-    margin: auto;
-    height: 100vh;
-    // border: 2px solid red;
     position: relative;
-    background-size: cover;
-    overflow: hidden;
+    width: 94%;
+    height: 100vh;
+    margin: auto;
+
+
+    @media (max-width: 1800px) {
+      width: 100%;
+    }
   }
 }
 
@@ -424,9 +443,14 @@ a:link, a:visited {
 
 .about {
   &__container {
-    width: 100vw;
+    position: relative;
+    width: 94%;
     height: 100vh;
-    display: relative;
+    margin: auto;
+
+    @media (max-width: 1800px) {
+      width: 100%;
+    }
 
     &--top {
       height: 100%;
