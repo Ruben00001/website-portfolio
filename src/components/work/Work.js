@@ -4,9 +4,6 @@ import { Transition, animated, Spring } from 'react-spring/renderprops'
 import Logo from '../pageLinks/Logo';
 import ProjectsLink from '../pageLinks/ProjectsLink';
 import AboutLink from '../pageLinks/AboutLink';
-import Flipper from './Flipper'
-import HeaderDecoration from './HeaderDecoration'
-import Flipper2 from './Flipper2';
 
 
 class Work extends Component {

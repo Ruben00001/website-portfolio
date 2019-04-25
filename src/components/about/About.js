@@ -63,8 +63,7 @@ class Page2 extends Component {
                 <span className="about__spiel__content__span--13">r</span>
                 <span className="about__spiel__content__span--14">e</span>
                 <span className="about__spiel__content__span--15">s</span> <span className="about__spiel__content__span--16">r</span>
-                <span className="about__spiel__content__span--17">e</span>
-                <span className="about__spiel__content__span--18">a</span>
+                <span className="about__spiel__content__span--17">e</span><span className="about__spiel__content__span--18">a</span>
                 <span className="about__spiel__content__span--19">l</span>
                 <span className="about__spiel__content__span--20">l</span>
                 <span className="about__spiel__content__span--21">y</span> <span className="about__spiel__content__span--22">z</span>

@@ -36,7 +36,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="first-page-container">
+      <div className="home__container">
         <Logo />
         <ProjectsLink route={this.routeProjects} />
         <AboutLink route={this.routeAbout} />
