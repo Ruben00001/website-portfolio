@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { Transition, animated, Spring } from 'react-spring/renderprops'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import Logo from '../pageLinks/Logo';
 import ProjectsLink from '../pageLinks/ProjectsLink';
 import AboutLink from '../pageLinks/AboutLink';
@@ -310,6 +312,9 @@ class Work extends Component {
                   )}
                 </Spring>
                 <div className="page-counter__number">0{this.state.totalProjects}.</div>
+              </div>
+              <div onClick={this.setAnimationLeaveValues} className="flipper-next-button">
+                <p>NEXT PROJECT <FontAwesomeIcon icon={faAngleRight}></FontAwesomeIcon></p>
               </div>
             </animated.div> 
           ))}

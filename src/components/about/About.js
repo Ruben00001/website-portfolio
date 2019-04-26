@@ -80,7 +80,7 @@ class Page2 extends Component {
                 </div>
                 <div className="about__spiel__link about__spiel__link--email">
                   <p>Get in touch:</p>
-                  <a><p>a.ruben00001@gmail.com</p></a>
+                  <p>a.ruben00001@gmail.com</p>
                 </div>
               </div>   
             </animated.div>
