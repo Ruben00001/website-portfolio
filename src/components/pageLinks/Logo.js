@@ -4,14 +4,14 @@ import { faBolt, faEye, faGem, faSnowflake } from "@fortawesome/free-solid-svg-i
 
 export default function Logo(props) {
   return (
-    <div onClick={props.route} className="header-decoration__icons-container">
+    <div onClick={props.route} className="logo">
       <div>
-        <FontAwesomeIcon className="header-decoration__icon header-decoration__icon-1" icon={faBolt}></FontAwesomeIcon>
-        <FontAwesomeIcon className="header-decoration__icon header-decoration__icon-2" icon={faEye}></FontAwesomeIcon>
+        <FontAwesomeIcon className="logo__icon logo__icon-1" icon={faBolt}></FontAwesomeIcon>
+        <FontAwesomeIcon className="logo__icon logo__icon-2" icon={faEye}></FontAwesomeIcon>
       </div>
       <div>
-        <FontAwesomeIcon className="header-decoration__icon" icon={faGem}></FontAwesomeIcon>
-        <FontAwesomeIcon className="header-decoration__icon header-decoration__icon-4" icon={faSnowflake}></FontAwesomeIcon>
+        <FontAwesomeIcon className="logo__icon" icon={faGem}></FontAwesomeIcon>
+        <FontAwesomeIcon className="logo__icon logo__icon-4" icon={faSnowflake}></FontAwesomeIcon>
       </div>
     </div>
   )
