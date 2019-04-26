@@ -77,6 +77,10 @@ a:link, a:visited {
       font-size: 16px;
       margin-bottom: 12px;
     }
+
+    @media (max-width: 420px) {
+      font-size: 13px;
+    }
   }
 
   &__second-line {
@@ -104,11 +108,20 @@ a:link, a:visited {
       width: 620px;
     }
 
+    @media (max-width: 420px) {
+      font-size: 22px;
+      width: 320px;
+    }
+
     &--a {
       margin-left: 310px;
 
       @media (max-width: 1680px) {
         margin-left: 220px;
+      }
+
+      @media (max-width: 420px) {
+        margin-left: 110px
       }
     }
 
@@ -117,6 +130,22 @@ a:link, a:visited {
 
       @media (max-width: 1680px) {
         margin-left: 40px;
+      }
+
+      @media (max-width: 420px) {
+        margin-left: 20px;
+      }
+
+      @media (max-width: 320px) {
+        margin-left: 35px;
+      }
+    }
+
+    &__letter {
+      min-width: 16.75px;
+
+      @media (max-width: 420px) {
+        min-width: 10px;
       }
     }
   }

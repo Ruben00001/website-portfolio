@@ -9,7 +9,7 @@ export default function FirstLine() {
       config={{ duration: 1000 }}
     >
       { props => (
-        <p style={props} className="welcome-text__first-line">Hi. I'm Ruben!!</p>
+        <p style={props} className="welcome-text__first-line">Hi. I'm Ruben.</p>
       )}
     </Spring>
   )

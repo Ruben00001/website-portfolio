@@ -11,8 +11,7 @@ export default function SecondLineA() {
   const [items, set] = useState([]);
   const transitions = useTransition(items, item => item.key, {
     from: { transform: 'translate3d(0, 15px,0)', opacity: 0 },
-    enter: { transform: 'translate3d(0,0px,0)', opacity: 1, minWidth: 16.75 },
-    // leave: { transform: 'translate3d(0, 15px,0)', opacity: 0, minWidth: 16.75 }
+    enter: { transform: 'translate3d(0,0px,0)', opacity: 1 },
   });
 
   const reset = useCallback(() => {
@@ -24,7 +23,7 @@ export default function SecondLineA() {
   useEffect(() => void reset(), []);
 
   return transitions.map(({ item, props, key }) => (
-    <animated.span key={key} style={props}>
+    <animated.span key={key} style={props} className="welcome-text__second-line__letter">
       {item.text}
     </animated.span>
   ));
