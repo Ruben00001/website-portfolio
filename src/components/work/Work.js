@@ -124,7 +124,7 @@ class Work extends Component {
                     { props => (
                       <div style={props} className="flipper2__links">
                         <a href="https://github.com/ruben00001/amy-jewellery--website" target="__blank">CODE</a>
-                        <a href="https://cryptic-plateau-33978.herokuapp.com/" target="__blank">LAUNCH</a>
+                        <a href="https://amyrodriguez.art/" target="__blank">LAUNCH</a>
                       </div>
                     )}
                   </Spring>

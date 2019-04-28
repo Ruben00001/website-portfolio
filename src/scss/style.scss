@@ -273,24 +273,25 @@ a:link, a:visited {
     left: 15%;
     width: 85%;
   }
-
   @media (max-width: 1600px) {
     top: 8vh;
   }
-
   @media (max-width: 1450px) {
     top: 22vh;
   }
-
   @media (max-width: 1050px) {
     top: 8vh;
   }
-
   @media (max-width: 420px) {
     top: 15%;
     left: 10%;
     width: 90%;
     height: 85%;
+  }
+  @media (max-width: 420px) {
+    top: 19%;
+    left: 14%;
+    width: 86%;
   }
 
   &__image {
@@ -309,8 +310,8 @@ a:link, a:visited {
       height: 400px;
     }
     @media (max-width: 321px) {
-      width: 196px;
-      height: 280px;
+      width: 216px;
+      height: 319px;
     }
 
     img {
@@ -359,6 +360,7 @@ a:link, a:visited {
     }
     @media (max-width: 420px) {
       color: black;
+      font-size: 35px;
     }
     @media (max-width: 376px) {
       font-size: 33px;
@@ -379,7 +381,7 @@ a:link, a:visited {
       }
       @media (max-width: 420px) {
         left: 4%;
-        top: 90%;
+        top: 91%;
       }
     }
 
@@ -395,7 +397,7 @@ a:link, a:visited {
       }
       @media (max-width: 420px) {
         left: 4%;
-        top: 90%;
+        top: 91%;
       }
     }
 
@@ -445,7 +447,7 @@ a:link, a:visited {
         right: -52.1%;
       }
       @media (max-width: 420px) {
-        top: 90%;
+        top: 91%;
         left: 4%;
       }
     }
@@ -471,7 +473,7 @@ a:link, a:visited {
       font-size: 15px;
     }
     @media (max-width: 321px) {
-      font-size: 14px;
+      font-size: 13px;
     }
   }
 
@@ -495,7 +497,7 @@ a:link, a:visited {
       bottom: -18%;
     }
     @media (max-width: 321px) {
-      bottom: -23%;
+      bottom: -20%;
     }
 
     a{
@@ -505,6 +507,9 @@ a:link, a:visited {
       @media (max-width: 1450px) {
         font-size: 11px;
       }
+      @media (max-width: 321px) {
+        font-size: 10px;
+      }
     }
   }
 }
@@ -513,6 +518,7 @@ a:link, a:visited {
 .flipper-next-button {
   position: absolute;
   display: none;
+  color: white;
 
   @media (max-width: 420px) {
     display: block;
@@ -526,8 +532,9 @@ a:link, a:visited {
     bottom: 6%;
   }
   @media (max-width: 321px) {
-    font-size: 14px;
-    left: 18%;
+    font-size: 11px;
+    left: 38%;
+    bottom: 96%;
   }
 }
 
@@ -546,6 +553,9 @@ a:link, a:visited {
     right: 20px;
     top: 22%;
   }
+  @media (max-width: 321px) {
+    right: 12px;
+  }
 
   &__line {
     width: 1.5px;
@@ -558,6 +568,9 @@ a:link, a:visited {
     @media (max-width: 1200px) {
       height: 120px;
     }
+    @media (max-width: 321px) {
+      height: 90px;
+    }
   }
 
   &__number {
@@ -567,9 +580,11 @@ a:link, a:visited {
     @media (max-width: 1450px) {
       font-size: 11px;
     }
-  
     @media (max-width: 1200px) {
       font-size: 10px;
+    }
+    @media (max-width: 321px) {
+      font-size: 9px;
     }
   }
 }
@@ -921,6 +936,9 @@ a:link, a:visited {
   }
   @media (max-width: 420px) {
     font-size: 11px;
+  }
+  @media (max-width: 321px) {
+    font-size: 10px;
   }
 
   &--projects {
