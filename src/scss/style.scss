@@ -288,18 +288,12 @@ a:link, a:visited {
     width: 90%;
     height: 85%;
   }
-  @media (max-width: 420px) {
-    top: 19%;
-    left: 14%;
-    width: 86%;
-  }
 
   &__image {
     position: relative;
     will-change: width, height, left, top;
     width: 525px;
     height: 750px;
-    // border: 1px solid blue;
 
     @media (max-width: 1450px) {
       width: 350px;
@@ -371,6 +365,22 @@ a:link, a:visited {
 
     &--1 {
       top: 32%;
+      right: -69.7%;
+      
+      @media (max-width: 1450px) {
+        right: -84.7%;
+      }
+      @media (max-width: 900px) {
+        right: -76.8%;
+      }
+      @media (max-width: 420px) {
+        left: 4%;
+        top: 91%;
+      }
+    }
+
+    &--2 {
+      top: 32%;
       right: -54.3%;
       
       @media (max-width: 1450px) {
@@ -385,7 +395,7 @@ a:link, a:visited {
       }
     }
 
-    &--2 {
+    &--3 {
       top: 32%;
       right: -39.6%;
 
@@ -401,7 +411,7 @@ a:link, a:visited {
       }
     }
 
-    &--3 {
+    &--4 {
       top: 32%;
       right: -58%;
 
@@ -418,7 +428,7 @@ a:link, a:visited {
       }
     }
 
-    &--4 {
+    &--5 {
       top: 32%;
       right: -56.6%;
 
@@ -435,7 +445,7 @@ a:link, a:visited {
       }
     }
 
-    &--5 {
+    &--6 {
       top: 32%;
       right: -47.2%;
 

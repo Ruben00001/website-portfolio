@@ -15,7 +15,7 @@ class Work extends Component {
     this.state = {
       controlLeaveAnimation: true,
       project: 1,
-      totalProjects: 5,
+      totalProjects: 6,
       top: '0%',
       height: '100%',
       opacity: 1,
@@ -98,7 +98,7 @@ class Work extends Component {
                     to={{ top: this.state.top, width: '100%', height: this.state.height, opacity: this.state.opacity }}
                     config={{ delay: this.state.delayImage ,mass: 6, tension: 350, friction: 80 }}>
                     { props => (
-                      <img style={props} src={require('../../img/XX__Amy3.png')} alt=""/>
+                      <img style={props} src={require('../../img/pirosphoto.jpg')} alt=""/>
                     )}
                   </Spring>
                   <Spring
@@ -106,7 +106,7 @@ class Work extends Component {
                     to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
                     config={{ delay: this.state.delayTitle, duration: 300 }}>
                     { props => (
-                      <h2 style={props} className="flipper2__title flipper2__title--1">Amy's <br/> Jewellery</h2>
+                      <h2 style={props} className="flipper2__title flipper2__title--1">Piros <br/> Photography</h2>
                     )}
                   </Spring>
                   <Spring
@@ -123,14 +123,53 @@ class Work extends Component {
                     config={{ delay: 480, duration: 300 }}>
                     { props => (
                       <div style={props} className="flipper2__links">
-                        <a href="https://github.com/ruben00001/amy-jewellery--website" target="__blank">CODE</a>
+                        <a href="https://github.com/ruben00001/website__piros-photography" target="__blank">CODE</a>
+                        <a href="http://pirosphotography.co.uk/" target="__blank">LAUNCH</a>
+                      </div>
+                    )}
+                  </Spring>
+                </div>
+              }
+              { this.state.project === 2 &&
+                <div className="flipper2__image">
+                  <Spring
+                    from={{ top: '100%', width: '100%', height: '0%' }}
+                    to={{ top: this.state.top, width: '100%', height: this.state.height, opacity: this.state.opacity }}
+                    config={{ delay: this.state.delayImage ,mass: 6, tension: 350, friction: 80 }}>
+                    { props => (
+                      <img style={props} src={require('../../img/XX__Amy3.png')} alt=""/>
+                    )}
+                  </Spring>
+                  <Spring
+                    from={{ marginTop: 13, opacity: 0 }}
+                    to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                    config={{ delay: this.state.delayTitle, duration: 300 }}>
+                    { props => (
+                      <h2 style={props} className="flipper2__title flipper2__title--2">Amy's <br/> Jewellery</h2>
+                    )}
+                  </Spring>
+                  <Spring
+                    from={{ marginTop: 13, opacity: 0 }}
+                    to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                    config={{ delay: this.state.delaySubTitle, duration: 300 }}>
+                    { props => (
+                      <h3 style={props} className="flipper2__sub-title">website ---</h3>
+                    )}
+                  </Spring>
+                  <Spring
+                    from={{ marginTop: 13, opacity: 0 }}
+                    to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
+                    config={{ delay: 480, duration: 300 }}>
+                    { props => (
+                      <div style={props} className="flipper2__links">
+                        <a href="https://github.com/ruben00001/website__amy-jewellery" target="__blank">CODE</a>
                         <a href="https://amyrodriguez.art/" target="__blank">LAUNCH</a>
                       </div>
                     )}
                   </Spring>
                 </div>
               }
-              { this.state.project === 2 && 
+              { this.state.project === 3 && 
                 <div className="flipper2__image">
                   <Spring
                     from={{ top: '100%', width: '100%', height: '0%' }}
@@ -145,7 +184,7 @@ class Work extends Component {
                     to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
                     config={{ delay: this.state.delayTitle, duration: 300 }}>
                     { props => (
-                      <h2 style={props} className="flipper2__title flipper2__title--2">Gentle <br/> Energy</h2>
+                      <h2 style={props} className="flipper2__title flipper2__title--3">Gentle <br/> Energy</h2>
                     )}
                   </Spring>
                   <Spring
@@ -162,14 +201,14 @@ class Work extends Component {
                     config={{ delay: 480, duration: 300 }}>
                     { props => (
                       <div style={props} className="flipper2__links">
-                        <a href="https://github.com/ruben00001/gentle-energy--website" target="__blank">CODE</a>
+                        <a href="https://github.com/ruben00001/website__gentle-energy" target="__blank">CODE</a>
                         <a href="http://gentleenergy.co.uk/" target="__blank">LAUNCH</a>
                       </div>
                     )}
                   </Spring>
                 </div>
               }
-              { this.state.project === 3 && 
+              { this.state.project === 4 && 
                 <div className="flipper2__image">
                   <Spring
                     from={{ top: '100%', width: '100%', height: '0%' }}
@@ -184,7 +223,7 @@ class Work extends Component {
                     to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
                     config={{ delay: this.state.delayTitle, duration: 300 }}>
                     { props => (
-                      <h2 style={props} className="flipper2__title flipper2__title--3">MountApp</h2>
+                      <h2 style={props} className="flipper2__title flipper2__title--4">MountApp</h2>
                     )}
                   </Spring>
                   <Spring
@@ -201,14 +240,14 @@ class Work extends Component {
                     config={{ delay: 480, duration: 300 }}>
                     { props => (
                       <div style={props} className="flipper2__links">
-                        <a href="https://github.com/ruben00001/nodejs-mountApp--project" target="__blank">CODE</a>
+                        <a href="https://github.com/ruben00001/NodeJS__mountain-app" target="__blank">CODE</a>
                         <a href="https://nameless-tor-14744.herokuapp.com/" target="__blank">LAUNCH</a>
                       </div>
                     )}
                   </Spring>
                 </div>
               }
-              { this.state.project === 4 && 
+              { this.state.project === 5 && 
                 <div className="flipper2__image">
                   <Spring
                     from={{ top: '100%', width: '100%', height: '0%' }}
@@ -223,7 +262,7 @@ class Work extends Component {
                     to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
                     config={{ delay: this.state.delayTitle, duration: 300 }}>
                     { props => (
-                      <h2 style={props} className="flipper2__title flipper2__title--4">Calculator</h2>
+                      <h2 style={props} className="flipper2__title flipper2__title--5">Calculator</h2>
                     )}
                   </Spring>
                   <Spring
@@ -240,14 +279,14 @@ class Work extends Component {
                     config={{ delay: 480, duration: 300 }}>
                     { props => (
                       <div style={props} className="flipper2__links">
-                        <a href="https://github.com/ruben00001/js-calulator--project" target="__blank">CODE</a>
+                        <a href="https://github.com/ruben00001/JavaScript__Calculator" target="__blank">CODE</a>
                         <a href="https://ruben00001.github.io/js-calulator--project/" target="__blank">LAUNCH</a>
                       </div>
                     )}
                   </Spring>
                 </div>
               }
-              { this.state.project === 5 && 
+              { this.state.project === 6 && 
                 <div className="flipper2__image">
                   <Spring
                     from={{ top: '100%', width: '100%', height: '0%' }}
@@ -262,7 +301,7 @@ class Work extends Component {
                     to={{ marginTop: this.state.titleMarginTop, opacity: this.state.opacity }}
                     config={{ delay: this.state.delayTitle, duration: 300 }}>
                     { props => (
-                      <h2 style={props} className="flipper2__title flipper2__title--5">Weather<br />API</h2>
+                      <h2 style={props} className="flipper2__title flipper2__title--6">Weather<br />API</h2>
                     )}
                   </Spring>
                   <Spring
@@ -279,7 +318,7 @@ class Work extends Component {
                     config={{ delay: 480, duration: 300 }}>
                     { props => (
                       <div style={props} className="flipper2__links">
-                        <a href="https://github.com/ruben00001/react-weather-api--project" target="__blank">CODE</a>
+                        <a href="https://github.com/ruben00001/React__weather-app" target="__blank">CODE</a>
                         <a href="https://enigmatic-chamber-48968.herokuapp.com/" target="__blank">LAUNCH</a>
                       </div>
                     )}

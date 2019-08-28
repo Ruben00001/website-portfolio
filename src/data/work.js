@@ -1,4 +1,11 @@
 export const ProjectList = [
+  // {
+  //   image: require('../img/Amy.JPG'),
+  //   title: "Amy's Jewellery",
+  //   type: 'website',
+  //   git: 'https://github.com/ruben00001/amy-jewellery--website',
+  //   demo: 'https://cryptic-plateau-33978.herokuapp.com/'
+  // },
   {
     image: require('../img/Amy.JPG'),
     title: "Amy's Jewellery",
