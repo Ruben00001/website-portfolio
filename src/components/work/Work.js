@@ -123,7 +123,7 @@ class Work extends Component {
                     config={{ delay: 480, duration: 300 }}>
                     { props => (
                       <div style={props} className="flipper2__links">
-                        <a href="https://github.com/ruben00001/website__piros-photography" target="__blank">CODE</a>
+                        <a href="https://github.com/ruben00001/website__piroska-photography_frontend" target="__blank">CODE</a>
                         <a href="http://pirosphotography.co.uk/" target="__blank">LAUNCH</a>
                       </div>
                     )}
@@ -280,7 +280,7 @@ class Work extends Component {
                     { props => (
                       <div style={props} className="flipper2__links">
                         <a href="https://github.com/ruben00001/JavaScript__Calculator" target="__blank">CODE</a>
-                        <a href="https://ruben00001.github.io/js-calulator--project/" target="__blank">LAUNCH</a>
+                        <a href="https://ruben00001.github.io/JavaScript__Calculator/" target="__blank">LAUNCH</a>
                       </div>
                     )}
                   </Spring>
