@@ -384,7 +384,7 @@ a:link, a:visited {
       right: -54.3%;
       
       @media (max-width: 1450px) {
-        right: -66%;
+        right: -65.8%;
       }
       @media (max-width: 900px) {
         right: -59.8%;
@@ -397,13 +397,13 @@ a:link, a:visited {
 
     &--3 {
       top: 32%;
-      right: -39.6%;
+      right: -37.6%;
 
       @media (max-width: 1450px) {
-        right: -48.1%;
+        right: -45.9%;
       }
       @media (max-width: 900px) {
-        right: -43.7%;
+        right: -41.7%;
       }
       @media (max-width: 420px) {
         left: 4%;
@@ -528,7 +528,6 @@ a:link, a:visited {
 .flipper-next-button {
   position: absolute;
   display: none;
-  color: white;
 
   @media (max-width: 420px) {
     display: block;
@@ -539,12 +538,7 @@ a:link, a:visited {
     bottom: 8%;
   }
   @media (max-width: 360px) {
-    bottom: 6%;
-  }
-  @media (max-width: 321px) {
-    font-size: 11px;
-    left: 38%;
-    bottom: 96%;
+    bottom: 8%;
   }
 }
 
