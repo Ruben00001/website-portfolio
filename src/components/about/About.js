@@ -49,7 +49,7 @@ class Page2 extends Component {
           {show => show && (props => (
             <animated.div className="about__container--top" style={props}>
               <div className="about__spiel">
-                <p className="about__spiel__content">Hi, I’m Ruben Seveelaventhan, a London based web developer with a passion for design and creative problem solving. I started coding in 2018 following diverse careers in the education and construction sectors.</p>
+                <p className="about__spiel__content">Hi, I’m Ruben Seveelaventhan, a London based web developer with a passion for design and creative problem solving.</p>
                 <p className="about__spiel__content"><br/>And what about Ruben the person? I enjoy chilling out, getting into novels, mo
                 <span className="about__spiel__content__span--1">v</span>
                 <span className="about__spiel__content__span--2">i</span>
@@ -80,7 +80,7 @@ class Page2 extends Component {
                 </div>
                 <div className="about__spiel__link about__spiel__link--email">
                   <p>Get in touch:</p>
-                  <p>a.ruben00001@gmail.com</p>
+                  <p>hello@rubenseveelaventhan.com</p>
                 </div>
               </div>   
             </animated.div>
