@@ -8,11 +8,11 @@ export default function FirstLine() {
       to={{ opacity: 1, marginTop: 0 }}
       config={{ duration: 1000 }}
     >
-      { props => (
-        <p style={props} className="welcome-text__first-line">Hi. I'm Ruben.</p>
+      {(props) => (
+        <p style={props} className="welcome-text__first-line">
+          Welcome to VirtualWorks.
+        </p>
       )}
     </Spring>
-  )
+  );
 }
-
-
